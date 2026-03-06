@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPO SIM 15 — Zoom | CXO Simulabs</title>
+<meta name="description" content="Master go-to-market strategy through Zoom's pivotal decisions. A CPO Track simulation by CXO Simulabs.">
+<link rel="canonical" href="https://mohansimham.github.io/CPO-SIM-15-Zoom/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CPO SIM 15 — Zoom | CXO Simulabs">
+<meta property="og:description" content="Master go-to-market strategy through Zoom's pivotal decisions. Test your product instincts through 10 real scenarios.">
+<meta property="og:url" content="https://mohansimham.github.io/CPO-SIM-15-Zoom/">
+<meta property="og:site_name" content="CXO Simulabs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CPO SIM 15 — Zoom | CXO Simulabs">
+<meta name="twitter:description" content="Master go-to-market strategy through Zoom's pivotal decisions. Test your product instincts through 10 real scenarios.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CPO SIM 15 — Zoom","url":"https://mohansimham.github.io/CPO-SIM-15-Zoom/","description":"Master go-to-market strategy through Zoom's pivotal decisions. A CPO Track simulation by CXO Simulabs.","applicationCategory":"Education","provider":{"@type":"Organization","name":"CXO Simulabs","url":"https://www.cxosimulabs.com"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4J0M6TE3E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Z4J0M6TE3E');</script>
+<style>
+:root {
+  --navy:#1a1a2e; --navy-mid:#16213e; --red:#e23744;
+  --accent:#2D8CFF; --accent-light:#e8f2ff;
+  --white:#fff; --light:#f7f7f9; --border:#e5e7eb;
+  --text:#1f2937; --muted:#6b7280;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text);line-height:1.6;}
+.phase{display:none;}
+.phase.active{display:block;}
+
+/* NAV */
+.nav{background:var(--navy);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#fff;font-weight:800;font-size:1.1em;letter-spacing:.5px;}
+.nav-logo span{color:var(--red);}
+.nav-track{background:rgba(45,140,255,.15);border:1px solid rgba(45,140,255,.3);color:#5aa3ff;padding:4px 12px;border-radius:20px;font-size:.75em;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.nav-sims{display:flex;gap:4px;}
+.nav-sim{color:#778;text-decoration:none;font-size:.78em;padding:4px 10px;border-radius:6px;transition:all .2s;}
+.nav-sim:hover{color:#fff;background:rgba(255,255,255,.08);}
+.nav-sim.current{color:var(--accent);font-weight:600;}
+
+/* HERO BAND */
+.sim-band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:48px 32px 40px;text-align:center;}
+.sim-band .eyebrow{display:inline-block;background:rgba(45,140,255,.15);border:1px solid rgba(45,140,255,.35);color:#5aa3ff;padding:5px 16px;border-radius:20px;font-size:.75em;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:16px;}
+.sim-band h1{color:#fff;font-size:2em;font-weight:900;margin-bottom:8px;}
+.sim-band p{color:#778899;font-size:1em;max-width:520px;margin:0 auto;}
+
+/* CARD */
+.card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);max-width:620px;margin:0 auto;}
+.center-wrap{padding:40px 24px;}
+
+/* FORM */
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:.85em;font-weight:600;color:var(--text);margin-bottom:6px;}
+.form-group input{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:8px;font-size:.95em;font-family:'Inter',sans-serif;transition:border-color .2s;outline:none;}
+.form-group input:focus{border-color:var(--accent);}
+.form-note{font-size:.8em;color:var(--muted);margin-top:8px;}
+.btn{display:inline-block;padding:13px 28px;border-radius:8px;font-weight:700;font-size:.95em;cursor:pointer;border:none;transition:all .2s;font-family:'Inter',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff;width:100%;}
+.btn-primary:hover{background:#1a7ae6;transform:translateY(-1px);}
+.btn-outline{background:transparent;border:2px solid var(--border);color:var(--text);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.btn-navy{background:var(--navy);color:#fff;width:100%;}
+.btn-navy:hover{background:var(--navy-mid);}
+.error-msg{color:#dc2626;font-size:.82em;margin-top:8px;display:none;}
+.success-msg{color:#059669;font-size:.82em;margin-top:8px;display:none;}
+
+/* OTP */
+.otp-input{letter-spacing:8px;font-size:1.4em;text-align:center;font-weight:700;}
+.otp-timer{font-size:.8em;color:var(--muted);text-align:center;margin-top:8px;}
+.resend-link{color:var(--accent);cursor:pointer;text-decoration:underline;}
+
+/* INTRO */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.intro-card{background:var(--light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);}
+.intro-card h4{font-size:.88em;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.intro-card p{font-size:.82em;color:var(--muted);}
+.attempt-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:.82em;font-weight:700;margin-bottom:20px;}
+
+/* QUESTIONS */
+.q-wrap{max-width:760px;margin:0 auto;padding:32px 24px;}
+.progress-bar-wrap{background:var(--white);border-bottom:1px solid var(--border);padding:14px 32px;}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;max-width:760px;margin-left:auto;margin-right:auto;}
+.progress-label{font-size:.82em;font-weight:600;color:var(--muted);}
+.progress-track{height:5px;background:#e5e7eb;border-radius:3px;max-width:760px;margin:0 auto;}
+.progress-fill{height:5px;background:var(--accent);border-radius:3px;transition:width .4s ease;}
+.scenario-box{background:var(--white);border-radius:12px;padding:28px;margin-bottom:24px;border-left:4px solid var(--accent);}
+.scenario-label{font-size:.72em;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:10px;}
+.scenario-text{font-size:.93em;color:#374151;line-height:1.75;white-space:pre-line;}
+.scenario-text strong{display:block;color:var(--navy);font-weight:700;margin-top:14px;margin-bottom:4px;font-size:.95em;}
+.q-text{font-size:1.05em;font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.5;}
+.options{display:flex;flex-direction:column;gap:12px;}
+.option{background:var(--white);border:2px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;transition:all .2s;font-size:.93em;line-height:1.5;}
+.option:hover{border-color:var(--accent);background:var(--accent-light);}
+.option.locked{pointer-events:none;cursor:default;}
+.feedback-box{background:#f8fafc;border-radius:10px;padding:20px;margin-top:20px;border-left:3px solid var(--navy);font-size:.9em;color:#374151;line-height:1.7;}
+.feedback-box .fb-label{font-weight:700;color:var(--navy);margin-bottom:6px;font-size:.85em;text-transform:uppercase;letter-spacing:.5px;}
+.next-btn-wrap{margin-top:24px;text-align:right;}
+
+/* RESULTS */
+.results-wrap{max-width:800px;margin:0 auto;padding:40px 24px;}
+.score-ring-wrap{text-align:center;margin:24px 0;}
+.score-ring{position:relative;display:inline-block;}
+.score-ring zooms{display:block;}
+.score-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.score-num{font-size:2.4em;font-weight:900;color:var(--navy);}
+.score-pct{font-size:.85em;color:var(--muted);font-weight:600;}
+.tier-badge{display:inline-block;padding:8px 24px;border-radius:20px;font-weight:700;font-size:.95em;margin:12px 0;}
+.tier-mastery{background:#dcfce7;color:#166534;}
+.tier-proficiency{background:#dbeafe;color:#1e40af;}
+.tier-competency{background:#fef9c3;color:#854d0e;}
+.tier-foundational{background:#fee2e2;color:#991b1b;}
+.results-summary{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;}
+.results-summary h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.q-result-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:.88em;}
+.q-result-row:last-child{border-bottom:none;}
+.q-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.dot-high{background:#059669;}
+.dot-mid{background:#f59e0b;}
+.dot-low{background:#dc2626;}
+.cert-section{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;text-align:center;}
+.cert-section h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:16px;}
+#certZooms{border-radius:8px;max-width:100%;box-shadow:0 4px 20px rgba(0,0,0,.1);}
+.cert-buttons{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+.cert-buttons .btn{width:auto;}
+
+/* HUB NAV */
+.hub-section{background:var(--navy);padding:60px 24px;}
+.hub-inner{max-width:800px;margin:0 auto;}
+.hub-section h3{color:#fff;font-size:1.2em;font-weight:700;margin-bottom:6px;}
+.hub-section p{color:#778899;font-size:.9em;margin-bottom:28px;}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.hub-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:18px;text-decoration:none;transition:all .2s;display:block;}
+.hub-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);transform:translateY(-2px);}
+.hub-card.current-sim{border-color:rgba(45,140,255,.5);background:rgba(45,140,255,.08);}
+.hub-card .hw{font-size:.72em;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.hub-card .hco{color:#fff;font-weight:700;font-size:.95em;}
+.hub-card .htopic{color:#556677;font-size:.78em;margin-top:4px;}
+.hub-card .hstatus{font-size:.72em;margin-top:8px;font-weight:600;}
+.status-done{color:#4ade80;}
+.status-available{color:var(--accent);}
+.status-locked{color:#445566;}
+
+/* ATTEMPT 2 PROMPT */
+.attempt2-wrap{background:var(--white);border-radius:12px;padding:28px;margin:20px 0;text-align:center;border:2px solid var(--accent);}
+.attempt2-wrap h3{color:var(--navy);font-weight:800;font-size:1.1em;margin-bottom:8px;}
+.attempt2-wrap p{color:var(--muted);font-size:.9em;margin-bottom:20px;}
+
+/* BLOCKED */
+.blocked-wrap{text-align:center;padding:60px 24px;max-width:500px;margin:0 auto;}
+.blocked-icon{font-size:3em;margin-bottom:16px;}
+.blocked-wrap h2{color:var(--navy);font-weight:800;margin-bottom:10px;}
+.blocked-wrap p{color:var(--muted);font-size:.95em;margin-bottom:24px;}
+
+/* CUMULATIVE FEEDBACK */
+.cumulative-card{margin:20px 0;}
+.cumulative-card h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.comp-bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.comp-label{width:170px;font-size:.78em;font-weight:600;color:var(--text);flex-shrink:0;}
+.comp-track{flex:1;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;}
+.comp-fill{height:6px;border-radius:3px;transition:width .6s ease;}
+.comp-pct{width:36px;font-size:.78em;font-weight:700;color:var(--muted);text-align:right;}
+.insight-box{margin-top:18px;background:var(--light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);}
+.insight-label{font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}
+.insight-text{font-size:.9em;color:#374151;line-height:1.75;}
+.strengths-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.strength-tag{background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.25);color:#065f46;padding:4px 10px;border-radius:12px;font-size:.75em;font-weight:600;}
+.gap-tag{background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.2);color:#991b1b;padding:4px 10px;border-radius:12px;font-size:.75em;font-weight:600;}
+
+/* NEXT SIM PROMO */
+.next-sim-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:12px;padding:20px 24px;margin:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.next-sim-banner h4{color:#fff;font-size:1em;font-weight:700;margin-bottom:4px;}
+.next-sim-banner p{color:#778899;font-size:.85em;}
+.btn-gold{background:linear-gradient(135deg,#c9a227,#e8c84a);color:#1a1a2e;font-weight:700;padding:10px 24px;border-radius:8px;border:none;cursor:pointer;font-size:.9em;text-decoration:none;display:inline-block;}
+.btn-gold:hover{opacity:.9;transform:translateY(-1px);}
+
+/* LEARN CARDS */
+.learn-wrap{max-width:620px;margin:0 auto;padding:32px 24px;}
+.learn-card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);display:none;}
+.learn-card.active{display:block;}
+.learn-card .learn-icon{font-size:2.4em;margin-bottom:16px;}
+.learn-card h3{font-size:1.15em;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.learn-card .learn-subtitle{font-size:.85em;color:var(--accent);font-weight:600;margin-bottom:16px;}
+.learn-card p{font-size:.92em;color:#374151;line-height:1.75;margin-bottom:14px;}
+.learn-card .learn-apply{background:var(--accent-light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);margin-top:16px;}
+.learn-card .learn-apply h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.learn-card .learn-apply p{font-size:.88em;color:#374151;margin-bottom:0;}
+.learn-card .learn-example{background:var(--light);border-radius:10px;padding:16px;margin-top:14px;}
+.learn-card .learn-example h4{font-size:.82em;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.learn-card .learn-example p{font-size:.85em;color:var(--muted);margin-bottom:0;font-style:italic;}
+.learn-card .learn-framework{background:#1a1a2e;border-radius:10px;padding:18px 20px;margin-top:14px;border-left:3px solid var(--accent);}
+.learn-card .learn-framework h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.learn-card .learn-framework ol{list-style:none;padding:0;margin:0;counter-reset:fw;}
+.learn-card .learn-framework ol li{counter-increment:fw;font-size:.84em;color:rgba(255,255,255,.75);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.5;}
+.learn-card .learn-framework ol li:last-child{border-bottom:none;}
+.learn-card .learn-framework ol li::before{content:counter(fw) ". ";color:var(--accent);font-weight:700;}
+.learn-card .learn-framework ol li span{color:rgba(255,255,255,.4);font-size:.9em;}
+.learn-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
+.learn-dots{display:flex;gap:8px;}
+.learn-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:background .2s;}
+.learn-dot.active{background:var(--accent);}
+.learn-counter{font-size:.82em;color:var(--muted);font-weight:600;}
+
+/* SOURCES & DISCLAIMER */
+.sources-section{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;}
+.sources-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;}
+.sources-toggle h3{font-size:1em;font-weight:700;color:var(--navy);margin:0;}
+.sources-toggle .toggle-icon{font-size:1.2em;color:var(--muted);transition:transform .2s;}
+.sources-toggle .toggle-icon.open{transform:rotate(180deg);}
+.sources-content{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.sources-content.open{display:block;}
+.sources-content ul{list-style:none;padding:0;}
+.sources-content li{font-size:.85em;color:#374151;padding:6px 0;border-bottom:1px solid #f0f0f0;line-height:1.6;}
+.sources-content li:last-child{border-bottom:none;}
+.sources-content li a{color:var(--accent);text-decoration:none;}
+.sources-content li a:hover{text-decoration:underline;}
+.sources-content .disclaimer-text{font-size:.82em;color:var(--muted);line-height:1.7;margin-top:14px;padding:14px;background:var(--light);border-radius:8px;}
+
+/* FOOTER */
+footer{background:#0d1117;color:#445566;text-align:center;padding:24px;font-size:.8em;}
+footer a{color:#556677;text-decoration:none;}
+
+@media(max-width:600px){
+  .nav-sims{display:none;}
+  .intro-grid{grid-template-columns:1fr;}
+  .sim-band h1{font-size:1.6em;}
+  .cert-buttons{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo" id="nav-logo" onclick="founderTap()">CXO <span>Simulabs</span></div>
+  <div class="nav-track">CPO Track</div>
+  <div class="nav-sims">
+    <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="nav-sim">SIM 1</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" class="nav-sim">SIM 2</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-3-Netflix/" class="nav-sim">SIM 3</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-4-Amazon/" class="nav-sim">SIM 4</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-5-Uber/" class="nav-sim">SIM 5</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-6-Zomato/" class="nav-sim">SIM 6</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-7-Slack/" class="nav-sim">SIM 7</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-8-Google/" class="nav-sim">SIM 8</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-9-Meta/" class="nav-sim">SIM 9</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-10-Shopify/" class="nav-sim">SIM 10</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-11-Duolingo/" class="nav-sim">SIM 11</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-12-LinkedIn/" class="nav-sim">SIM 12</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-13-Pinterest/" class="nav-sim">SIM 13</a>
+    <a href="https://mohansimham.github.io/CPO-SIM-14-Canva/" class="nav-sim">SIM 14</a>
+    <a href="#" class="nav-sim current">SIM 15</a>
+  </div>
+</nav>
+
+<!-- PHASE: BLOCKED -->
+<div id="phase-blocked" class="phase">
+  <div class="sim-band"><div class="eyebrow">CPO Simulation 15 · Zoom</div><h1>Zoom: Go-to-Market Strategy</h1></div>
+  <div class="center-wrap">
+    <div class="blocked-wrap">
+      <div class="blocked-icon">🔒</div>
+      <h2>Both Attempts Used</h2>
+      <p>You've completed both attempts for this simulation. Each simulation allows 2 attempts to give you a chance to improve your score.</p>
+      <p style="margin-top:16px;color:var(--accent);font-weight:600;">Ready for your next challenge?</p>
+      <div style="margin-top:24px;">
+        <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="btn btn-navy" style="display:inline-block;text-decoration:none;width:auto;">Try SIM 1 — Airbnb →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: EMAIL GATE -->
+<div id="phase-email" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 15 · Zoom</div>
+    <h1>Zoom: Go-to-Market Strategy</h1>
+    <p>10 pivotal moments. Real product decisions. How would you have built it?</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <h2 style="font-size:1.2em;font-weight:800;color:var(--navy);margin-bottom:6px;">Let's get started</h2>
+      <p style="font-size:.88em;color:var(--muted);margin-bottom:24px;">We'll send your personalised certificate to your email when you complete the simulation.</p>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="input-name" placeholder="First and last name" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="input-email" placeholder="your@email.com" autocomplete="email">
+        <div class="form-note">Used to send your certificate and improve your experience. No spam.</div>
+      </div>
+      <div id="email-error" class="error-msg">Please enter a valid name and email address.</div>
+      <button class="btn btn-primary" onclick="sendOTP()" id="send-otp-btn" style="margin-top:8px;">Send Verification Code →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: OTP -->
+<div id="phase-otp" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 15 · Zoom</div>
+    <h1>Check Your Email</h1>
+    <p>Enter the 6-digit code we just sent you.</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <h2 style="font-size:1.1em;font-weight:800;color:var(--navy);margin-bottom:6px;">Verify your email</h2>
+      <p style="font-size:.88em;color:var(--muted);margin-bottom:24px;">Code sent to <strong id="otp-email-display"></strong>. Expires in <span id="otp-timer">10:00</span>.</p>
+      <div class="form-group">
+        <label>Verification Code</label>
+        <input type="text" id="input-otp" class="otp-input" placeholder="000000" maxlength="6" inputmode="numeric">
+      </div>
+      <div id="otp-error" class="error-msg">Incorrect code. Please try again.</div>
+      <div id="otp-success" class="success-msg">✓ Email verified!</div>
+      <button class="btn btn-primary" onclick="verifyOTP()" style="margin-top:8px;">Verify & Start Simulation →</button>
+      <p style="font-size:.82em;color:var(--muted);margin-top:14px;text-align:center;">Didn't get it? <span class="resend-link" onclick="resendOTP()">Resend code</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: INTRO -->
+<div id="phase-intro" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 15 · Zoom</div>
+    <h1>Zoom: Go-to-Market Strategy</h1>
+    <p>You're the Product Manager. 10 real scenarios. What do you decide?</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <div id="attempt-badge-display" class="attempt-badge">🎯 Attempt 1 of 2</div>
+      <h2 style="font-size:1.1em;font-weight:800;color:var(--navy);margin-bottom:10px;">What you'll be tested on</h2>
+      <div class="intro-grid">
+        <div class="intro-card"><h4>Launch Strategy</h4><p>Choosing when, how, and to whom you launch — from stealth beta to freemium explosion to enterprise-first motions.</p></div>
+        <div class="intro-card"><h4>Pricing & Packaging</h4><p>Structuring plans, setting prices, and bundling features to maximise adoption and revenue simultaneously.</p></div>
+        <div class="intro-card"><h4>Channel Strategy</h4><p>Picking the right distribution channels — PLG, sales-led, partnerships, virality — and knowing when to shift between them.</p></div>
+        <div class="intro-card"><h4>Market Expansion</h4><p>Moving from early adopters to mainstream, from SMB to enterprise, from one market to many — without losing what made you win.</p></div>
+      </div>
+      <p style="font-size:.85em;color:var(--muted);margin-bottom:20px;">10 questions · Multiple choice · Feedback after every answer · ~15 minutes</p>
+      <button class="btn btn-primary" onclick="showPhase('learn')">Continue →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: LEARN -->
+<div id="phase-learn" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CPO Simulation 15 · Zoom</div>
+    <h1>Before You Begin</h1>
+    <p>A quick refresher on the frameworks you'll apply in this simulation.</p>
+  </div>
+  <div class="learn-wrap">
+
+    <div class="learn-card active" data-learn="0">
+      <div class="learn-icon">🚀</div>
+      <h3>Product-Led Growth vs. Sales-Led Growth</h3>
+      <div class="learn-subtitle">Let the product sell itself — or build an army to sell it?</div>
+      <p>Product-led growth (PLG) means your product IS the primary acquisition, activation, and revenue driver. Users sign up, experience value, and upgrade — all without talking to a salesperson. Sales-led growth (SLG) means a sales team drives acquisition through demos, negotiations, and relationship-building. Most successful B2B companies use a hybrid, but the balance depends on product complexity, deal size, and buyer behaviour. The fundamental question: can a user experience enough value on their own to justify paying? If yes, PLG. If they need guidance, SLG. If both, hybrid.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Map your product against three PLG prerequisites: (1) Can users self-serve? If setup requires integration, configuration, or training, pure PLG won't work. (2) Is the value obvious quickly? Users need an "aha moment" within minutes, not weeks. (3) Is the decision-maker the user? If the buyer and user are different people (IT buys, employees use), you need sales to reach the buyer. Zoom nailed all three: anyone could start a meeting in 30 seconds (self-serve), the video quality was obviously better (quick value), and individual users could buy with a credit card (user = buyer). This is why PLG worked so well for Zoom.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>Zoom's GTM genius was using PLG for land (free users adopt Zoom bottom-up) and SLG for expand (sales team converts organisations to paid plans). A teacher starts using free Zoom for virtual classes. Students experience it. They use it at work. Their company has 500 employees on free Zoom. Now Zoom's sales team calls the CIO: "You already have 500 users. Want enterprise features — SSO, admin controls, compliance?" The sale is easy because adoption already happened. This "land and expand" model let Zoom grow from $60M to $622M revenue in two years (2018-2020) without the massive sales force that competitors like Cisco WebEx required.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>GTM Motion Selection Framework</h4>
+        <ol>
+          <li>Self-Serve Test <span>— Can a user sign up, set up, and get value without human help? If yes: PLG viable. If no: need sales or customer success.</span></li>
+          <li>Time-to-Value <span>— How fast does a user reach the "aha" moment? Minutes: PLG. Days: PLG with onboarding. Weeks: sales-assisted. Months: enterprise sales.</span></li>
+          <li>Buyer-User Alignment <span>— Is the person who pays also the person who uses? Same person: PLG. Different people: need sales to bridge the gap.</span></li>
+          <li>Deal Size <span>— ACV under $5K: PLG (self-serve). $5K-$50K: PLG + inside sales. $50K-$500K: field sales. $500K+: enterprise sales + solutions engineering.</span></li>
+          <li>Virality Potential <span>— Does using the product naturally expose non-users? (Zoom meetings include non-users. Slack messages stay inside.) High virality: PLG advantage.</span></li>
+          <li>Market Maturity <span>— New category? Need sales to educate. Existing category with known need? PLG can work because users know what they want.</span></li>
+          <li>Hybrid Timing <span>— Most companies start PLG or SLG, then add the other. When to add sales to PLG: when you see enterprise usage but no conversion. When to add PLG to SLG: when you want to reduce CAC.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">1 of 4</span>
+        <div class="learn-dots"><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="1">
+      <div class="learn-icon">💰</div>
+      <h3>Pricing & Packaging Strategy</h3>
+      <div class="learn-subtitle">Price is a signal, not just a number.</div>
+      <p>Pricing is the most powerful lever in your GTM toolkit — and the most neglected. A 1% improvement in pricing yields 11% profit improvement (vs. 3.3% from volume and 7.8% from cost reduction). Your pricing communicates positioning (premium vs. accessible), segments your market (free vs. pro vs. enterprise), and shapes user behaviour (which features drive upgrades). The three pricing dimensions: the model (per-user, per-usage, flat-rate), the metric (what you charge for), and the level (how much). Get any one wrong and your GTM stalls.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Start with your value metric — the unit of value that correlates with how much value customers get. Zoom charges per host (not per participant) because the host is the person getting value from organising the meeting. Slack charges per active user because more active users = more value from communication. Your value metric should: (1) scale with customer value, (2) be easy to understand, (3) be predictable for the buyer. Then design packages around natural upgrade triggers: what limitation in the free plan creates enough friction that users want to pay, but not so much friction that they leave?</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>Zoom's pricing evolution shows strategic mastery. The free plan had a brilliant constraint: unlimited 1-on-1 calls but a 40-minute limit on group calls. This was genius because: (1) 1-on-1 calls let users experience Zoom's quality advantage over Skype (builds habit), (2) group calls are where the real business value is (meetings, webinars), (3) the 40-minute limit creates natural friction ("sorry everyone, we need to restart the Zoom") that's embarrassing enough to trigger upgrades but not annoying enough to switch to a competitor. Pro at $14.99/host/month removed the limit. Business at $19.99 added admin features. Enterprise added dedicated support. Each tier mapped to a clear buyer persona and budget.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Pricing Strategy Framework</h4>
+        <ol>
+          <li>Value Metric <span>— What unit of value do you charge for? Per user, per host, per GB, per transaction? It should scale with the value your customer receives.</span></li>
+          <li>Free Plan Design <span>— What's free? Enough to demonstrate value. What's gated? The features that unlock the biggest value for paying use cases. The free plan is marketing, not charity.</span></li>
+          <li>Upgrade Trigger <span>— What moment makes a free user NEED to upgrade? (40-min limit, storage full, team size exceeded.) This should be a natural workflow friction, not an arbitrary wall.</span></li>
+          <li>Package Structure <span>— How many tiers? Usually 3-4. Each tier should have a clear buyer persona, a clear "why upgrade" from the tier below, and a meaningful price gap.</span></li>
+          <li>Price Anchoring <span>— Your highest tier makes your middle tier look reasonable. Price the top tier for your best customers, not for everyone.</span></li>
+          <li>Annual vs. Monthly <span>— Offer both. Annual discount (typically 15-20%) improves retention and cash flow. Monthly lowers the commitment barrier for new users.</span></li>
+          <li>Competitive Positioning <span>— Are you priced above, below, or at competitors? Below: need volume. Above: need differentiation. At parity: need a different axis to compete on.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">2 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="2">
+      <div class="learn-icon">🌊</div>
+      <h3>Crossing the Chasm</h3>
+      <div class="learn-subtitle">The gap between early adopters and mainstream customers kills most products.</div>
+      <p>Geoffrey Moore's "Crossing the Chasm" describes the most dangerous moment in a product's GTM journey: the gap between early adopters (who buy because it's new) and the early majority (who buy because it works and others use it). Early adopters tolerate bugs, missing features, and incomplete experiences. The early majority demands reliability, integration with existing workflows, social proof, and low switching costs. The product, messaging, and sales motion that won early adopters will NOT win the majority. Most startups die in the chasm — beloved by a small group, ignored by the mass market.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>To cross the chasm, pick a beachhead segment: one specific market segment where you can win completely and become the default. Don't try to serve the entire mainstream market at once. Win one segment decisively, then expand from that stronghold. Zoom's beachhead was small business meetings: teams of 5-50 people who needed reliable video calls without IT support. They didn't try to compete with Cisco for Fortune 500 enterprises or with Skype for consumer video calls. They owned the mid-market meeting use case, built word-of-mouth there, then expanded up-market (enterprise) and into adjacent use cases (webinars, phone, events).</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>Zoom's chasm-crossing was textbook. In 2013-2016, Zoom was beloved by tech-savvy early adopters who valued video quality. But mainstream businesses still used WebEx and Skype because "that's what IT approved." Zoom crossed the chasm with three moves: (1) Beachhead: focused on small businesses that didn't have IT departments to block them — users could adopt Zoom without asking permission. (2) Whole product: added recording, scheduling integrations (Outlook, Google Calendar), and phone dial-in — features the mainstream demanded. (3) Social proof: publicized case studies from recognisable brands like Uber and Nasdaq. By 2018, Zoom had crossed the chasm: it was the default choice for new meeting tool purchases, not just the "cool alternative" for early adopters.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Chasm-Crossing Playbook</h4>
+        <ol>
+          <li>Beachhead Selection <span>— Pick ONE segment you can dominate. Criteria: urgent need, reachable, can win in 6-12 months, referenceable for adjacent segments.</span></li>
+          <li>Whole Product Audit <span>— What's missing between your product and the "whole product" the beachhead needs? (Integrations, support, documentation, training.)</span></li>
+          <li>Compelling Reason to Buy <span>— Early majority needs a REASON to switch, not just a better product. What business pain is urgent enough to overcome switching inertia?</span></li>
+          <li>Social Proof <span>— Early majority buys what others buy. Collect case studies, logos, reviews, and analyst recognition from your beachhead wins.</span></li>
+          <li>Risk Reduction <span>— Early majority is risk-averse. Offer free trials, money-back guarantees, migration support, and SLAs that reduce the perceived risk of switching.</span></li>
+          <li>Channel Alignment <span>— Are you selling through channels the early majority trusts? (Enterprise: Gartner, resellers. SMB: app marketplaces, online reviews.)</span></li>
+          <li>Adjacent Expansion <span>— Once you own the beachhead, which adjacent segment is closest? Expand segment by segment, not all at once.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">3 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="3">
+      <div class="learn-icon">🎯</div>
+      <h3>Competitive Positioning & Market Timing</h3>
+      <div class="learn-subtitle">You don't win by being better. You win by being different.</div>
+      <p>In a crowded market, "better" is not a GTM strategy. When Zoom launched in 2013, there were already 10+ video conferencing tools. Zoom didn't win because it was "better WebEx" — it won because it was positioned differently: "video conferencing that just works." The positioning defined the message (simplicity), the audience (frustrated WebEx/Skype users), the channel (word of mouth from delighted users), and the competitive frame (us vs. the frustration of existing tools, not us vs. specific competitors). Great positioning makes selling easier because customers self-select into your product.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Use April Dunford's positioning framework: (1) Competitive alternatives — what would customers use if you didn't exist? (2) Unique attributes — what do you have that alternatives don't? (3) Value — what do those attributes enable? (4) Target customers — who cares most about that value? (5) Market category — what context makes your value obvious? Zoom's positioning: competitive alternative = WebEx/Skype. Unique attribute = reliability + simplicity + quality. Value = meetings start on time without IT headaches. Target = anyone who's ever said "can you hear me?" Market category = video conferencing (not "unified communications" — that's the incumbent's framing).</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>Zoom's market timing was as important as its product quality. In 2013, three trends converged: (1) Bandwidth became cheap enough for reliable HD video. (2) Remote work was growing 10% YoY. (3) WebEx and Skype had become so frustrating that "can you hear me?" was a universal joke. Eric Yuan (ex-VP Engineering at WebEx) understood the frustration intimately and timed the launch perfectly. But timing alone isn't enough — Google Hangouts had the same timing and lost. Zoom combined timing with execution: freemium for adoption, obsessive focus on call quality, and a simple brand promise. The lesson: market timing creates the window, but positioning and execution determine who climbs through it.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Positioning & Timing Assessment</h4>
+        <ol>
+          <li>Competitive Alternatives <span>— What do customers use today? (Incumbent tools, manual workarounds, doing nothing.) This is your real competition.</span></li>
+          <li>Unique Capabilities <span>— What can you do that alternatives genuinely can't? Be honest. "Better" isn't unique. "Different" is.</span></li>
+          <li>Value Translation <span>— So what? Translate capabilities into outcomes customers care about. (Not "HD video" but "meetings that start on time.")</span></li>
+          <li>Best-Fit Customers <span>— Who gets the most value? Target them first. A product for everyone is positioned for no one.</span></li>
+          <li>Market Category <span>— What frame of reference makes your value obvious? Choose the category that positions your strengths as must-haves.</span></li>
+          <li>Timing Signals <span>— What technology, behaviour, or market shift creates the window? (Bandwidth, remote work, AI, regulation.) Is the window open NOW?</span></li>
+          <li>Narrative Control <span>— What story do you tell the market? The company that defines the narrative wins. (Zoom = "it just works" was a narrative, not a feature list.)</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">4 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="startSim()">Start Simulation →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- PHASE: QUESTIONS -->
+<div id="phase-questions" class="phase">
+  <div class="progress-bar-wrap">
+    <div class="progress-top">
+      <span class="progress-label" id="q-progress-label">Question 1 of 10</span>
+      <span class="progress-label" id="q-score-label">Score: 0</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div class="q-wrap">
+    <div class="scenario-box">
+      <div class="scenario-label">Scenario</div>
+      <div class="scenario-text" id="q-scenario"></div>
+    </div>
+    <div class="q-text" id="q-question"></div>
+    <div class="options" id="q-options"></div>
+    <div class="feedback-box" id="q-feedback" style="display:none;">
+      <div class="fb-label">Expert Analysis</div>
+      <div id="q-feedback-text"></div>
+    </div>
+    <div class="next-btn-wrap">
+      <button class="btn btn-navy" id="next-btn" onclick="nextQuestion()" style="display:none;">Next Question →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: RESULTS -->
+<div id="phase-results" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">Simulation Complete</div>
+    <h1 id="results-heading">Your Results</h1>
+  </div>
+  <div class="results-wrap">
+
+    <div class="card" style="text-align:center;margin-bottom:20px;">
+      <div class="score-ring-wrap">
+        <div class="score-ring">
+          <zooms id="scoreRingZooms" width="160" height="160"></zooms>
+          <div class="score-center">
+            <div class="score-num" id="result-pct">0%</div>
+            <div class="score-pct" id="result-score-label">0 / 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-badge" id="tier-badge">Strategic Mastery</div>
+      <p id="tier-feedback" style="color:var(--muted);font-size:.9em;max-width:480px;margin:0 auto;"></p>
+    </div>
+
+    <!-- Next Sim Banner (prominent) -->
+    <div class="next-sim-banner" id="next-sim-banner" style="display:none;">
+      <div>
+        <h4>Up next: SIM 1 — Airbnb</h4>
+        <p>Go-to-Market · Launch Strategy · Pricing & Packaging · 10 new decisions</p>
+      </div>
+      <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="btn-gold">Start SIM 1 →</a>
+    </div>
+
+    <div class="results-summary">
+      <h3>Decision Analysis — Expert Feedback on Every Choice</h3>
+      <div id="q-breakdown"></div>
+    </div>
+
+    <!-- Cumulative Feedback -->
+    <div class="card cumulative-card" id="cumulative-section">
+      <h3>Your CPO Profile</h3>
+      <p style="font-size:.82em;color:var(--muted);margin-bottom:20px;">Based on your decision patterns across all 10 scenarios</p>
+      <div id="competency-bars"></div>
+      <div class="insight-box">
+        <div class="insight-label">Strategic Insight</div>
+        <div class="insight-text" id="insight-text"></div>
+        <div style="margin-top:14px;">
+          <div style="font-size:.75em;font-weight:700;color:#059669;margin-bottom:6px;">STRENGTHS</div>
+          <div class="strengths-row" id="strength-tags"></div>
+        </div>
+        <div style="margin-top:12px;">
+          <div style="font-size:.75em;font-weight:700;color:#dc2626;margin-bottom:6px;">DEVELOP FURTHER</div>
+          <div class="strengths-row" id="gap-tags"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attempt 2 prompt (shown if attempt 1 done) -->
+    <div class="attempt2-wrap" id="attempt2-prompt" style="display:none;">
+      <h3>Try Attempt 2?</h3>
+      <p>Different questions, same competencies. Can you improve your score?</p>
+      <button class="btn btn-primary" onclick="startAttempt2()" style="width:auto;padding:12px 32px;">Start Attempt 2 →</button>
+    </div>
+
+    <div class="cert-section">
+      <h3>Your Certificate</h3>
+      <p style="font-size:.82em;color:var(--muted);margin-bottom:16px;">Download the certificate for Zoom or the square badge for Instagram, WhatsApp and other social media.</p>
+      <zooms id="certZooms" width="1200" height="850"></zooms>
+      <div class="cert-buttons" style="margin-top:14px;">
+        <button class="btn btn-navy" onclick="downloadCert()" style="width:auto;">↓ Certificate (Zoom)</button>
+        <button class="btn btn-navy" onclick="downloadBadge()" style="width:auto;">↓ Badge (Instagram)</button>
+        <button class="btn btn-outline" onclick="shareZoom()" style="width:auto;">Share Zoom</button>
+        <button class="btn btn-outline" onclick="shareTwitter()" style="width:auto;">Share X / Twitter</button>
+        <button class="btn btn-outline" onclick="shareWhatsApp()" style="width:auto;">Share WhatsApp</button>
+        <button class="btn btn-outline" onclick="copyLink()" style="width:auto;" id="copy-link-btn">Copy Link</button>
+      </div>
+      <!-- Hidden badge zooms -->
+      <zooms id="badgeZooms" width="1080" height="1080" style="display:none;"></zooms>
+    </div>
+
+    <!-- Sources & Disclaimer -->
+    <div class="sources-section">
+      <div class="sources-toggle" onclick="this.querySelector('.toggle-icon').classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+        <h3>Sources & Disclaimer</h3>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="sources-content">
+        <ul>
+          <li>Zoom Video Communications SEC Filings — S-1, 10-K Annual Reports, investor presentations — <a href="https://investors.zoom.us/" target="_blank">investors.zoom.us</a></li>
+          <li>Eric Yuan interviews and keynotes — founding story, product philosophy, and competitive strategy</li>
+          <li>Zoom's product-led growth playbook — freemium model, viral loops, and the path from SMB to enterprise</li>
+          <li>Public reporting on Zoom's growth from $60M to $4B+ revenue, COVID-era scaling, and post-pandemic pivot</li>
+          <li>Industry analyses on video conferencing, UCaaS, and collaboration platforms from Gartner, Forrester, and IDC</li>
+          <li>Go-to-market strategy literature — "Crossing the Chasm" by Geoffrey Moore, "Obviously Awesome" by April Dunford</li>
+          <li>Zoom developer platform and marketplace — API ecosystem, integrations, and platform expansion strategy</li>
+        </ul>
+        <div class="disclaimer-text">
+          <strong>Disclaimer:</strong> CXO Simulabs is an independent educational platform. Zoom and related marks are trademarks of Zoom Video Communications, Inc. This simulation is not affiliated with, endorsed by, or sponsored by Zoom Video Communications, Inc. All scenarios are inspired by publicly available information and may include dramatised elements for educational purposes. Dialogue attributed to individuals is fictional and does not represent actual statements. Financial figures are from public filings and published reports where available; some figures are approximations used for educational purposes. This is not a professional certification or accreditation.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HUB NAV -->
+  <div class="hub-section">
+    <div class="hub-inner">
+      <h3>CPO Track — All Simulations</h3>
+      <p>Each simulation tests a different set of CPO competencies. Start anywhere.</p>
+      <div class="hub-grid">
+        <a href="https://mohansimham.github.io/CPO-SIM-1-Airbnb/" class="hub-card">
+          <div class="hw">SIM 1</div>
+          <div class="hco">Airbnb</div>
+          <div class="htopic">Strategic Thinking · Stakeholder Mgmt · Risk</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-2-Spotify/" class="hub-card">
+          <div class="hw">SIM 2</div>
+          <div class="hco">Spotify</div>
+          <div class="htopic">Business Model · Porter's Five Forces · OKRs</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-3-Netflix/" class="hub-card">
+          <div class="hw">SIM 3</div>
+          <div class="hco">Netflix</div>
+          <div class="htopic">Jobs-to-Be-Done · A/B Testing · User Research</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-4-Amazon/" class="hub-card">
+          <div class="hw">SIM 4</div>
+          <div class="hco">Amazon Prime</div>
+          <div class="htopic">RICE · MoSCoW · Kano Model</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-5-Uber/" class="hub-card">
+          <div class="hw">SIM 5</div>
+          <div class="hco">Uber</div>
+          <div class="htopic">Market Sizing · Unit Economics · 5 Whys</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-6-Zomato/" class="hub-card">
+          <div class="hw">SIM 6</div>
+          <div class="hco">Zomato</div>
+          <div class="htopic">RICE · MoSCoW · Kano · ICE Scoring</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-7-Slack/" class="hub-card">
+          <div class="hw">SIM 7</div>
+          <div class="hco">Slack</div>
+          <div class="htopic">Rapid Prototyping · MVP · Pivot Strategy</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-8-Google/" class="hub-card">
+          <div class="hw">SIM 8</div>
+          <div class="hco">Google</div>
+          <div class="htopic">PRDs · Design Docs · Launch Review</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-9-Meta/" class="hub-card">
+          <div class="hw">SIM 9</div>
+          <div class="hco">Meta</div>
+          <div class="htopic">AI Feature Design · ML Lifecycle · AI Safety</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-10-Shopify/" class="hub-card">
+          <div class="hw">SIM 10</div>
+          <div class="hco">Shopify</div>
+          <div class="htopic">Roadmapping · Prioritisation · Platform Evolution</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-11-Duolingo/" class="hub-card">
+          <div class="hw">SIM 11</div>
+          <div class="hco">Duolingo</div>
+          <div class="htopic">Data Storytelling · Visualisation · Metrics</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-12-LinkedIn/" class="hub-card">
+          <div class="hw">SIM 12</div>
+          <div class="hco">LinkedIn</div>
+          <div class="htopic">Growth Loops · Retention · Network Effects</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-13-Pinterest/" class="hub-card">
+          <div class="hw">SIM 13</div>
+          <div class="hco">Pinterest</div>
+          <div class="htopic">Platform Strategy · Ecosystem Design · Competitive Moats</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <a href="https://mohansimham.github.io/CPO-SIM-14-Canva/" class="hub-card">
+          <div class="hw">SIM 14</div>
+          <div class="hco">Canva</div>
+          <div class="htopic">Research Design · Usability Testing · Validation</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <div class="hub-card current-sim">
+          <div class="hw">SIM 15 · Current</div>
+          <div class="hco">Zoom</div>
+          <div class="htopic">Launch Strategy · Pricing · Channel Selection</div>
+          <div class="hstatus status-done">✓ Completed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 CXO Simulabs · <a href="https://www.cxosimulabs.com">cxosimulabs.com</a> · <a href="https://www.cxosimulabs.com/privacy.html">Privacy</a> · <a href="https://www.cxosimulabs.com/terms.html">Terms</a></p>
+    <p style="margin-top:8px;font-size:.75em;color:#334455;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6;">CXO Simulabs is an independent educational platform. Zoom and related marks are trademarks of Zoom Video Communications, Inc This simulation is not affiliated with, endorsed by, or sponsored by Zoom Video Communications, Inc Scenarios are inspired by publicly available information and may include dramatised elements for educational purposes. This is not a professional certification. All dialogue is fictional and does not represent actual statements by any named individual.</p>
+  </footer>
+</div>
+
+<script>
+// ─── FOUNDER MODE ─────────────────────────────────────────
+let _founderTaps=0, _founderTimer=null;
+function founderTap(){
+  _founderTaps++;
+  clearTimeout(_founderTimer);
+  _founderTimer=setTimeout(()=>_founderTaps=0,600);
+  if(_founderTaps>=3){ enterFounderMode(); _founderTaps=0; }
+}
+function enterFounderMode(){
+  Object.values(LS).forEach(k=>localStorage.removeItem(k));
+  state.name='Founder Preview';
+  state.email='founder@cxosimulabs.com';
+  state.currentAttempt=1;
+  // Badge
+  if(!document.getElementById('founder-badge')){
+    const b=document.createElement('div');
+    b.id='founder-badge';
+    b.style.cssText='position:fixed;bottom:16px;right:16px;background:#1a1a2e;color:#fff;padding:8px 16px;border-radius:8px;font-size:.78em;font-weight:600;z-index:9999;border:1px solid rgba(226,55,68,.4);cursor:pointer;';
+    b.innerHTML='🔧 Founder Preview &nbsp;<span style="color:#e23744;" onclick="exitFounderMode()">✕ Exit</span>';
+    document.body.appendChild(b);
+  }
+  document.getElementById('attempt-badge-display').textContent='🔧 Preview Mode';
+  showPhase('intro');
+}
+function exitFounderMode(){
+  const b=document.getElementById('founder-badge');
+  if(b) b.remove();
+  location.reload();
+}
+
+// ─── COMPETENCY MAP ───────────────────────────────────────
+const COMP_MAP = [
+  {name:'Launch Strategy'},
+  {name:'Pricing & Packaging'},
+  {name:'Channel Selection'},
+  {name:'Market Positioning'},
+  {name:'Competitive Response'},
+  {name:'Freemium Design'},
+  {name:'Enterprise GTM'},
+  {name:'Viral Growth'},
+  {name:'Partnership Strategy'},
+  {name:'Market Expansion'},
+];
+
+// ─── CONFIG ───────────────────────────────────────────────
+const EJS_KEY      = 'ABWpMkWPOTsO_gQWG';
+const EJS_SERVICE  = 'service_a6x573k';
+const EJS_TEMPLATE = 'template_xt90q9j';
+emailjs.init(EJS_KEY);
+
+const LS = {
+  name:      'cxo_cpo15_name',
+  email:     'cxo_cpo15_email',
+  attempts:  'cxo_cpo15_attempts',
+  scores:    'cxo_cpo15_scores',
+};
+
+// ─── STATE ────────────────────────────────────────────────
+let state = {
+  name:'', email:'',
+  otp:'', otpExpiry:0, otpAttempts:0,
+  timerInterval:null,
+  currentAttempt:1,
+  currentQ:0,
+  answers:[],
+  totalScore:0, maxScore:0,
+};
+
+// ─── QUESTIONS ────────────────────────────────────────────
+const Q = {
+  1: [
+    {
+      scenario:`2013 — Zoom's Launch: How Do You Enter a Market with 10 Incumbents?\n\nEric Yuan has just left Cisco WebEx (where he was VP Engineering) to start Zoom. The video conferencing market already has WebEx, Skype, GoToMeeting, Google Hangouts, Adobe Connect, BlueJeans, and several others.\n\nYour product is better — HD video, cloud-native, reliable, and simple. But "better" isn't a GTM strategy when incumbents have millions of users, enterprise contracts, and brand recognition.\n\nYou have $6M in seed funding. The board asks: what's our go-to-market strategy?`,
+      question:`How should Zoom enter this crowded market?`,
+      options:[
+        {text:`Product-led growth with a generous free tier. Let anyone start a free meeting instantly — no downloads, no IT approval, no credit card. Make the free experience so good that users become evangelists. The product IS the marketing. Target frustrated users of WebEx and Skype who are tired of "can you hear me?" problems.`, score:3, feedback:`This is exactly what Zoom did, and it's the textbook PLG entry strategy for a crowded market. When incumbents have distribution and brand, you can't out-spend them on marketing or out-sell them with a sales team. But you CAN out-product them — and a free tier lets the product prove itself. The genius: every Zoom meeting is a product demo. When one person uses Zoom, every meeting participant experiences it. This viral loop meant Zoom's acquisition cost was near zero. The "frustrated WebEx user" targeting was perfect because it identified the emotional trigger (frustration) that made switching worth the effort.`},
+        {text:`Enterprise sales-led approach. Build an enterprise-grade product from day one with SSO, admin controls, and compliance features. Hire a sales team to sell directly to CIOs at Fortune 500 companies. Win big logos and the rest of the market will follow.`, score:1, feedback:`Enterprise-first is the wrong entry strategy here. CIOs at Fortune 500 companies have existing WebEx/Skype contracts worth millions — they won't rip and replace for a startup they've never heard of. Enterprise sales cycles are 6-12 months, require case studies you don't have, and demand a product maturity you can't yet deliver. Your $6M would fund maybe 10 enterprise sales reps for a year. Zoom did eventually build enterprise features and a sales team, but only after PLG had already created bottom-up adoption inside enterprises. The sales team's job was to convert existing free users, not cold-call CIOs.`},
+        {text:`Focus on a single vertical. Pick one industry (education, healthcare, or financial services) and build the best video conferencing tool for that vertical. Win the vertical completely, then expand horizontally.`, score:2, feedback:`Vertical focus is a legitimate beachhead strategy and can work well (Veeva in pharma, Toast in restaurants). But video conferencing is a horizontal need — every industry needs meetings. Going vertical means adding industry-specific features (HIPAA for healthcare, FERPA for education) before proving the core product works. With $6M, you'd rather prove product-market fit broadly (does anyone prefer us to WebEx?) than narrowly (do healthcare companies prefer us?). Zoom did eventually add vertical features, but the initial GTM was horizontal: anyone who's frustrated with their current video tool.`},
+        {text:`Aggressive pricing — undercut every competitor by 50%. Price the Pro plan at $7/month when WebEx charges $25. Win on price, then raise prices once you have market share.`, score:1, feedback:`Price wars are a losing strategy against incumbents with deeper pockets. Cisco can afford to match your $7/month or even go free — they have other revenue streams to subsidise WebEx. More importantly, low pricing signals low quality in B2B: CIOs associate cheap tools with unreliable tools. Zoom actually priced Pro at $14.99/month — competitive but not cheap. The free tier did the heavy lifting for acquisition, while the paid tiers were priced to signal quality and sustainability. Racing to the bottom on price is almost never the right GTM strategy.`}
+      ],
+      competency:[0,5,3]
+    },
+    {
+      scenario:`2014 — The 40-Minute Limit: Designing Zoom's Free Plan\n\nZoom is designing its free tier. The team debates what limitations to put on free users. The goal: a free plan generous enough to drive adoption but limited enough to drive upgrades.\n\nOptions being discussed:\n• Limit number of meetings per month\n• Limit meeting duration\n• Limit number of participants\n• Limit features (no recording, no screen share)\n• Limit video quality (SD instead of HD)\n\nFree users currently represent 90% of Zoom's user base but 0% of revenue. The conversion rate from free to paid is 2.5%.`,
+      question:`What free plan design maximises both adoption AND conversion?`,
+      options:[
+        {text:`Unlimited 1-on-1 calls with no time limit, but a 40-minute cap on group calls (3+ participants). Don't limit features, quality, or meeting count. The group call limit creates natural friction at the exact moment of highest business value — team meetings.`, score:3, feedback:`This is exactly what Zoom chose, and it's one of the most brilliant freemium designs in SaaS history. Why it works: (1) Unlimited 1-on-1 calls let users build the Zoom habit without friction — they experience HD quality and fall in love with the product. (2) The 40-minute group limit hits at the exact moment of business value — when you're using Zoom for real work meetings. (3) The friction is social, not technical: "sorry everyone, Zoom is about to cut us off" is embarrassing in a professional context, creating strong upgrade motivation. (4) Not limiting quality, features, or meeting count means free users experience the FULL product — they know exactly what they're paying for.`},
+        {text:`Limit to 100 meetings per month with no time or participant limits. This lets active users experience the full product but creates a natural cap that heavy users (businesses) will hit.`, score:1, feedback:`100 meetings per month is generous enough that most individuals and small teams would never hit it. A solopreneur doing 3 meetings/day uses only 60/month. The limit doesn't create friction at the right moment — it creates friction when a user has already gotten enormous value for free and then suddenly hits a wall. That feels punitive, not natural. Good freemium limits create friction during the activity you want to monetise, not after an arbitrary count. The 40-minute group limit creates friction DURING the high-value activity (team meetings) every single time.`},
+        {text:`Free HD video for 1-on-1, but limit group calls to SD quality. This preserves the premium product experience for paying users while still offering a functional free tier.`, score:1, feedback:`Quality degradation is a poor upgrade trigger because users might not notice the difference (especially on laptop screens) or might attribute poor quality to their internet connection rather than Zoom's plan limitation. The free user thinks "Zoom has bad quality" not "I need to upgrade for better quality." This damages the brand perception that's essential for PLG — every free user is a potential evangelist, and you want them saying "Zoom is amazing" not "Zoom is okay." The 40-minute limit is cleaner because users understand exactly why the meeting ended and exactly what upgrading would solve.`},
+        {text:`Feature gating — remove recording, screen sharing, and breakout rooms from the free plan. These are power features that business users need, creating a natural upgrade path without limiting the core meeting experience.`, score:2, feedback:`Feature gating is a common freemium strategy and can work. But removing screen sharing from free Zoom would significantly reduce the product's value for the use case that drives adoption: work meetings. If free users can't share their screen, they'll use Google Meet (which includes it free) for work and Zoom becomes a "video call only" tool. The risk of feature gating: you remove features that drive the habit, which reduces adoption. Zoom's approach was smarter — give the full feature set so users get addicted, then limit the one dimension (group call duration) that creates professional friction.`}
+      ],
+      competency:[5,1,7]
+    },
+    {
+      scenario:`2016 — Zoom's Channel Strategy: Partnerships or Direct?\n\nZoom is growing fast organically but the sales team is too small to reach mid-market companies (100-1000 employees). The team debates two channel strategies:\n\nDirect: Hire 50 more inside sales reps. Cost: $7.5M/year. Fully controlled. Slower to scale.\n\nPartner: Sign reseller agreements with 3-5 telecom/IT channel partners (CDW, SHI, Ingram Micro). They sell Zoom to their existing enterprise customers. Cost: 20-30% revenue share. Fast scale but less control.\n\nCurrent revenue: $60M ARR. Target: $150M ARR in 18 months.`,
+      question:`What's the right channel strategy for this growth stage?`,
+      options:[
+        {text:`Both, but sequence them. Phase 1 (6 months): Sign 2-3 channel partners for immediate mid-market reach — they have existing customer relationships you'd take years to build. Phase 2: Use the revenue from partner-sourced deals to fund hiring 30 direct sales reps who handle renewals and upsells. Partners acquire, direct team retains and expands.`, score:3, feedback:`This is the optimal hybrid approach. Partners give you immediate reach into the mid-market without the 6-month ramp time of hiring and training 50 sales reps. The 20-30% revenue share is expensive but worth it for speed — you need to hit $150M in 18 months. Using partners for acquisition and direct team for retention/expansion is smart because: (1) Partners are good at opening doors but bad at product depth. (2) Your direct team builds the customer relationship for upsells and renewals. (3) Over time, as your brand strengthens, you can shift more acquisition to direct and reduce partner dependence. This is roughly what Zoom did.`},
+        {text:`Go all-in on direct sales. Hire 50 reps immediately. Channel partners take 20-30% margin and they don't understand the product as well as your team. The $7.5M investment pays for itself if each rep closes $300K+ ARR.`, score:2, feedback:`The math works ($7.5M for $15M+ potential ARR) but the timeline doesn't. Hiring 50 sales reps takes 3-4 months. Training them takes 2-3 months. Ramping to full productivity takes another 3-6 months. You're looking at 8-12 months before most reps are generating meaningful revenue — too slow for an 18-month target. Direct sales also requires inbound leads or outbound prospecting, both of which need time to build. Channel partners solve the timeline problem because they already have customer relationships and deal flow. Direct is the right long-term play, but partners are the right short-term accelerant.`},
+        {text:`All-in on channel partners. Sign 5+ partners and let them drive all mid-market revenue. Focus your internal team entirely on product and enterprise accounts. The mid-market is high-volume, lower-margin — perfect for partners.`, score:1, feedback:`Over-reliance on channel partners is dangerous: you lose control over the customer relationship, pricing, messaging, and product feedback. Partners sell Zoom as "another product in our portfolio" not as "the revolutionary video tool." They bundle it with other services and compete on price, not product value. You also become dependent on partners for revenue forecasting and customer health data. The biggest risk: if a partner switches to selling a competitor (Microsoft Teams, Google Meet), you lose the entire pipeline overnight. Always maintain a direct sales capability for strategic control.`},
+        {text:`Skip traditional channels entirely. Invest the $7.5M in product-led growth: improve the free product, build viral features, and let bottom-up adoption drive mid-market conversion. Sales reps aren't needed when the product sells itself.`, score:1, feedback:`PLG is great for land (individual adoption) but insufficient for mid-market conversion (100-1000 employees). When a company has 200 free Zoom users, someone needs to contact the IT director and say "your employees already use Zoom — want enterprise features and a volume discount?" That requires a sales conversation. PLG without any sales motion means you acquire lots of free users but leave significant revenue on the table. The companies with 200 free users are READY to buy — you just need someone to ask them. PLG + sales is the right hybrid, not PLG alone.`}
+      ],
+      competency:[2,8,6]
+    },
+    {
+      scenario:`2017 — Zoom Phone: Expanding Beyond Video\n\nZoom's core video product is thriving ($150M ARR). The team considers launching Zoom Phone — a cloud-based phone system to replace traditional desk phones and PBX systems.\n\nThe opportunity:\n• UCaaS (Unified Communications) market is $30B and growing 15% YoY\n• Existing Zoom customers frequently ask for phone integration\n• Competitors (RingCentral, 8x8) are adding video to their phone platforms\n\nThe risk:\n• Phone is a completely different product with different buyer expectations (reliability, 911 compliance, number porting)\n• Entering phone means competing directly with RingCentral ($600M revenue) and Microsoft Teams\n• Phone customers expect 99.999% uptime (five nines), vs video's 99.9% (three nines)`,
+      question:`How should Zoom approach this market expansion from a GTM perspective?`,
+      options:[
+        {text:`Launch Zoom Phone as an add-on for existing Zoom customers, not as a standalone product. GTM motion: offer Zoom Phone to companies already paying for Zoom Meetings, positioned as "one platform for all communication." Price as a bundle discount. Use the existing customer base as the initial market — no need for new acquisition.`, score:3, feedback:`This is exactly Zoom's GTM strategy for Phone. Launching to existing customers eliminates the hardest part of GTM: acquisition. Your customers already trust Zoom for video — the pitch is "now add phone to the same platform." The bundle pricing creates a switching cost advantage: using Zoom for both meetings and phone is cheaper and simpler than using Zoom + RingCentral separately. This "land and expand" within the same account is the most capital-efficient GTM motion. Zoom Phone grew from 0 to 4M+ seats in 3 years using this approach, faster than any standalone phone product could have achieved.`},
+        {text:`Launch Zoom Phone as a standalone product competing directly with RingCentral. Build a dedicated sales team and GTM motion for phone. Target companies that don't use Zoom for video — phone is a different buyer (telecom/IT) than video (anyone).`, score:1, feedback:`Launching standalone against RingCentral means competing head-to-head with a $600M company that has 10 years of phone expertise, established carrier partnerships, and a mature product. Your phone product is new — it will have feature gaps, reliability questions, and no case studies. As a standalone product, Zoom Phone has no competitive advantage. As an add-on to Zoom Meetings, it has a massive advantage: existing trust, existing users, and bundle pricing. Starting standalone also means building an entirely new sales team, new marketing, and new positioning — expensive and slow.`},
+        {text:`Don't launch Zoom Phone at all. Stay focused on video — it's what Zoom is known for and where the brand is strongest. Entering phone dilutes the brand, divides engineering resources, and opens a fight with powerful competitors. Double down on the core instead.`, score:1, feedback:`"Stay focused" sounds prudent but ignores the competitive threat: RingCentral and Microsoft Teams are adding video to their phone products. If they succeed, customers will prefer "one platform for everything" over "best video + separate phone." By not entering phone, you're ceding the unified communications narrative to competitors who will eventually compete with your video product from a stronger position. The question isn't whether to enter phone — it's when and how. Zoom's advantage is entering from a position of video strength, not waiting until competitors have matched your video quality.`},
+        {text:`Partner with an established phone provider (RingCentral, 8x8) rather than building your own. Offer a co-branded Zoom + Partner Phone solution. This avoids the 99.999% uptime challenge and leverages existing phone expertise.`, score:2, feedback:`Partnership is a reasonable risk-mitigation strategy — phone is hard, and the reliability bar is higher than video. Zoom actually did initially explore partnerships before deciding to build. The problem: partnerships mean sharing revenue, losing control over product quality, and depending on a company that's also your competitor. If Zoom partners with RingCentral for phone, RingCentral uses the relationship to learn Zoom's customer base and eventually competes with better integrated video+phone. Build vs. partner is a classic GTM dilemma — for a product this strategic (unified communications), building gives you more long-term control despite higher short-term cost.`}
+      ],
+      competency:[9,3,0]
+    },
+    {
+      scenario:`2018 — Pre-IPO: Positioning Zoom for the Public Markets\n\nZoom is preparing to IPO. Revenue is $330M, growing 118% YoY. The company needs to position itself for Wall Street.\n\nTwo positioning narratives are being debated:\n\nNarrative A — "The Video Company": Position as the best video conferencing platform. Simple, focused story. Risk: video conferencing is a feature, not a category — Microsoft/Google can add it to their suites.\n\nNarrative B — "The Unified Communications Platform": Position as the future of business communication (video + phone + chat + events). Bigger TAM story. Risk: you're competing against established UCaaS players and the platform vision is still early.`,
+      question:`How should Zoom position for the IPO?`,
+      options:[
+        {text:`Narrative A as the anchor, with Narrative B as the growth story. IPO with "we're the video company that just works" (proven, credible, differentiated) AND "our vision is the unified communications platform" (growth potential, larger TAM). Lead with what you've proven, then excite investors with where you're going.`, score:3, feedback:`This "proven core + ambitious vision" structure is the optimal IPO positioning. Wall Street needs to believe two things: (1) the current business is strong and defensible (Narrative A proves this with $330M revenue and 118% growth), and (2) the future opportunity is much bigger (Narrative B expands the addressable market from $15B video to $50B+ UCaaS). Leading with A builds credibility — you're not asking investors to believe in a vision, you're showing them a business that works. B adds upside that justifies a premium valuation. Zoom's S-1 filing did exactly this: the pitch was "video-first unified communications platform" — video-first (proven) unified communications platform (vision).`},
+        {text:`All-in on Narrative B. The TAM for "video conferencing" is $15B — nice but not exciting for Wall Street. The TAM for "unified communications" is $50B+. Position as the next big communications platform to justify a premium valuation.`, score:1, feedback:`Leading with platform vision when you're primarily a video product creates a credibility gap. Analysts will ask: "Your revenue is 95% from video meetings. Why should we value you as a UCaaS platform?" If your platform story isn't backed by product and revenue reality, it looks like aspiration, not strategy. RingCentral, 8x8, and Microsoft can all claim the UCaaS TAM more credibly because they already have phone, chat, and contact centre products. Your advantage is video — own it first, then expand the narrative. Overreaching on positioning erodes investor confidence.`},
+        {text:`All-in on Narrative A. "We're the best video company. Period." Simplicity wins on Wall Street. Investors understand video. Don't confuse them with platform aspirations they can't verify.`, score:2, feedback:`Simplicity is valuable, but limiting the narrative to "video company" creates a ceiling: analysts will model your TAM as the video conferencing market ($15B) and value you accordingly. More concerning, it raises the "feature vs. product" risk: if Microsoft Teams or Google Meet adds comparable video for free (included in Office 365/Workspace), Zoom's standalone video business looks vulnerable. You need the platform narrative as a hedge — it tells investors "even if video commoditizes, we're building a broader platform that's harder to replicate." Pure video positioning is defensible today but strategically limiting.`},
+        {text:`Position as an "AI-powered communications company." AI is the hottest narrative on Wall Street. Frame every Zoom feature through an AI lens — AI noise cancellation, AI transcription, AI meeting summaries. Even if AI is a small part of the product today, it's the story investors want to hear.`, score:1, feedback:`In 2018, AI was not yet the Wall Street narrative it became in 2023. More importantly, positioning around AI when your core value proposition is reliability and simplicity is inauthentic. Investors would see through it: "Your revenue comes from people paying for video meetings, not AI." Trendy narratives backfire when they don't match revenue reality. Zoom's actual AI features in 2018 were minor (noise suppression, virtual backgrounds). Building the IPO story around a minor feature set risks looking like you're dressing up the product rather than explaining the real business. Always position based on what's true, not what's trendy.`}
+      ],
+      competency:[3,9,4]
+    },
+    {
+      scenario:`2019 — The Education Market: Free or Paid?\n\nZoom is seeing significant adoption in higher education. Universities are adopting Zoom for distance learning, office hours, and campus events. The education market is large (4,000+ US universities, 130,000+ K-12 schools) but price-sensitive.\n\nThe debate:\n• Offer Zoom free for all K-12 schools (like Google does with Workspace for Education)\n• Offer steep discounts (75% off enterprise pricing)\n• Price at standard rates but with education-specific features\n\nConsiderations:\n• Students who use Zoom in college become Zoom users at work (lifetime value)\n• Free offering for education creates goodwill but $0 revenue from a large segment\n• Competitors (Google Meet, Microsoft Teams) are already free for education`,
+      question:`What's the right GTM strategy for education?`,
+      options:[
+        {text:`Free for K-12, deeply discounted for higher education. K-12 schools have no budget and compete against free Google/Microsoft. Make it free — the cost is minimal and every student becomes a future employee who knows Zoom. Higher ed has real budgets and more complex needs (lecture halls, campus events) — charge 50-70% discounts for a product they'll actually use.`, score:3, feedback:`This tiered approach matches GTM strategy to economic reality. K-12 schools literally cannot pay — their competition is "free Google Meet on Chromebooks." Fighting for $0-revenue K-12 contracts wastes sales resources. Making it free costs Zoom almost nothing (K-12 meetings are small, low-bandwidth) but creates a massive user base of students who grow up using Zoom. Higher ed is different: universities have IT budgets ($5M+), need enterprise features (lecture recording, LMS integration, campus-wide deployment), and will pay for value. The discounted pricing wins the deal while still generating meaningful revenue. This is the "invest in the future, monetise the present" approach.`},
+        {text:`Standard enterprise pricing for all education. Education institutions are real businesses with real budgets. Discounting signals that our product isn't worth full price. If the product delivers value, charge for it. Schools that can't afford it aren't our target market.`, score:1, feedback:`This ignores the competitive reality: Google Meet and Microsoft Teams are free for education. If you charge standard pricing, schools won't evaluate Zoom — they'll default to the free option from Google or Microsoft. Education isn't choosing between Zoom at $15/user and nothing; they're choosing between Zoom at $15/user and Google Meet at $0. Standard pricing means losing the entire education market to free competitors. This also misses the strategic value of education: students become future enterprise users. The lifetime value of a student who uses Zoom for 4 years of college and then advocates for it at their job far exceeds any education discount.`},
+        {text:`Don't pursue education at all. It's a low-margin, high-support market with price-sensitive buyers. Focus sales resources on commercial and enterprise where the revenue per customer is 10x higher. Education is a distraction from the core business.`, score:1, feedback:`Education is a strategic investment, not a revenue play. Yes, revenue per customer is lower, but the indirect value is enormous: (1) Students become lifelong Zoom users. (2) Professors recommend Zoom to colleagues at other institutions. (3) Universities are early adopters that create legitimacy and case studies. (4) Education adoption creates millions of users who bring Zoom to their future employers. Zoom ignoring education means Google and Microsoft own the next generation of workers — all of whom will be comfortable with Google Meet/Teams and unfamiliar with Zoom. The GTM question isn't "can we make money from education?" but "can we afford to let competitors own the next generation of users?"`},
+        {text:`Launch a "Zoom for Education" product with education-specific features (virtual classrooms, attendance tracking, LMS integrations) at education-specific pricing (50% discount). Differentiate from free Google Meet by offering features that matter for education.`, score:2, feedback:`Building education-specific features is the right long-term play, but it's premature for GTM entry. You'd spend 6-12 months building features before entering the market — during which Google and Microsoft continue to win education accounts. A better sequence: enter education NOW with the existing product (free for K-12, discounted for higher ed), prove adoption, THEN build education-specific features based on actual user feedback. "Ship, learn, improve" beats "build, then ship" for market entry. The education features you imagine building might not be the ones schools actually need.`}
+      ],
+      competency:[0,1,9]
+    },
+    {
+      scenario:`2020 — COVID Surge: Scaling GTM When Demand Explodes 30x\n\nCOVID-19 hits. Zoom goes from 10 million daily meeting participants (December 2019) to 300 million (April 2020). Revenue is growing 169% YoY. But:\n\n• Free users explode from 50M to 250M — server costs surge\n• Enterprise deals that took 6 months now close in 6 days\n• Security vulnerabilities are exposed ("Zoombombing") and media coverage is brutally negative\n• Competitors (Google, Microsoft) make their video tools free to steal the moment\n\nThe board debates: is this a short-term spike or a permanent shift? How do we adjust GTM?`,
+      question:`What GTM adjustments should Zoom make during COVID?`,
+      options:[
+        {text:`Double down on enterprise conversion — this is a once-in-a-decade window to lock in enterprise contracts. Companies making emergency decisions NOW will sign multi-year deals. Shift sales resources from prospecting to closing: every company with 50+ free Zoom users should get a call this week. Fix security issues in parallel — they're critical but don't pause sales for them.`, score:2, feedback:`The enterprise conversion urgency is right — this IS a window to lock in multi-year contracts while buying committees are in crisis mode and not comparison-shopping. But "don't pause sales for security" is dangerously wrong. Zoombombing was a front-page news crisis that threatened Zoom's brand, enterprise trust, and regulatory standing. Eric Yuan made the right call: Zoom announced a 90-day security freeze — no new features, all engineering on security. This STRENGTHENED the enterprise sales motion because it proved Zoom took security seriously. Selling harder while security burns would have destroyed enterprise trust permanently.`},
+        {text:`Three parallel tracks: (1) Security first — announce a 90-day feature freeze, all engineering on security. This protects the brand and enterprise trust. (2) Enterprise acceleration — fast-track enterprise deals with simplified contracts and immediate provisioning. (3) Free tier investment — keep the free product excellent because free users are future enterprise customers. Accept the short-term server cost as customer acquisition investment.`, score:3, feedback:`This is almost exactly what Zoom did, and it's the optimal COVID GTM response. Track 1 (security) protects the long-term brand and makes enterprise buyers confident. Eric Yuan's 90-day security pledge was a GTM move disguised as a product move — it made the front page of every tech publication and signalled "we take your trust seriously." Track 2 (enterprise acceleration) capitalises on the moment — companies signing during crisis become locked-in customers for years. Track 3 (free tier) recognises that today's 250M free users are tomorrow's enterprise accounts. The server cost is an investment with a years-long payback through conversion.`},
+        {text:`Monetise the surge immediately. Convert the 40-minute free meeting limit to 20 minutes — there's massive demand, and users will pay. Raise enterprise prices 20% — buyers have no alternative and the value has never been higher. This is the moment to maximise revenue.`, score:1, feedback:`Raising prices and tightening the free plan during a global pandemic would be a PR disaster. Schools, nonprofits, and healthcare providers are using Zoom for essential services. "Zoom exploits pandemic by raising prices" would be the headline, destroying the goodwill that made Zoom the default choice. In fact, Zoom did the opposite: they removed the 40-minute limit for K-12 schools and offered free service to healthcare providers. This generated enormous positive press and deepened loyalty. The long-term revenue from grateful users who became permanent Zoom customers far exceeds any short-term price increase during the crisis.`},
+        {text:`Focus entirely on reliability and scaling infrastructure. At 300M daily participants, one major outage could permanently damage the brand. Freeze all GTM activity — no new features, no sales pushes, no marketing campaigns. Just keep the service running. Revenue will come naturally from the demand surge.`, score:1, feedback:`Infrastructure scaling is critical, but freezing GTM activity means missing the biggest market opportunity in a decade. While you freeze, Microsoft Teams and Google Meet are aggressively offering free video to steal users. Competitors aren't pausing — they're spending millions on marketing to capture users who might otherwise choose Zoom. You need to scale infrastructure AND accelerate GTM simultaneously. This is a "walk and chew gum" moment: invest in infrastructure for reliability, invest in security for trust, and invest in sales for conversion. Pausing any one of these three is a mistake.`}
+      ],
+      competency:[0,4,6]
+    },
+    {
+      scenario:`2020 — Zoom vs. Microsoft Teams: The Platform War\n\nMicrosoft Teams is growing aggressively, bundled free with Office 365 (which 260 million users already have). Teams daily active users jump from 20M to 75M during COVID.\n\nMicrosoft's GTM advantage: Teams is "free" for any organisation with Office 365. CIOs see it as "we already paid for this."\n\nZoom's advantage: better video quality, simpler UX, and massive consumer adoption driving bottom-up enterprise demand.\n\nThe competitive question: how does Zoom defend against a product that's "free" because it's bundled with the most dominant business software suite?`,
+      question:`What's Zoom's competitive GTM response to Microsoft Teams?`,
+      options:[
+        {text:`Don't compete on price — compete on experience and ecosystem. Position Zoom as "the meetings platform that works with everything" — integrate with Microsoft, Google, Salesforce, Slack, and every other tool. While Teams locks you into the Microsoft ecosystem, Zoom is the neutral meeting platform. Invest in interoperability as a GTM differentiator.`, score:3, feedback:`This is the strategically optimal response to a bundling competitor. When Microsoft gives Teams away "free," competing on price is impossible. But Teams has a weakness: it only works well within the Microsoft ecosystem. Companies using Google Workspace, Salesforce, Slack, or mixed environments need a meeting tool that's ecosystem-agnostic. Zoom's GTM message becomes: "Teams comes free with Microsoft — but can it integrate with your Google Calendar, Salesforce CRM, and Slack channels? Zoom does." This positions Zoom as the Switzerland of video conferencing — neutral territory in the Microsoft vs. Google vs. Salesforce platform wars. Zoom did exactly this, investing heavily in integrations.`},
+        {text:`Match Microsoft's pricing. Offer Zoom free for any organisation that commits to annual billing. Absorb the cost short-term to prevent Teams from winning on price. Make it a pure product decision: Zoom vs. Teams, with no price advantage for either.`, score:1, feedback:`Making the full product free eliminates Zoom's revenue from its largest customer segment. Zoom can't afford to match "free" — Microsoft subsidises Teams with Office 365 revenue ($50B+/year). Zoom's entire revenue is $2.6B. A price war against Microsoft is financial suicide. More importantly, it's unnecessary: Zoom's customers aren't choosing Teams because of price. They're choosing Zoom because of quality and experience. The customers who choose Teams for price would choose any free tool — they're not high-value customers. Don't sacrifice revenue to compete for low-value customers.`},
+        {text:`Move up-market aggressively. Concede the SMB market (where "free Teams" is hardest to compete against) and focus on enterprise accounts where buying decisions are about quality, reliability, and vendor relationships — not about what's bundled with Office. Build enterprise-grade features (Zoom Rooms, Zoom Events, Zoom IQ) that Teams can't match.`, score:2, feedback:`Moving up-market is partially right — enterprise accounts do make buying decisions on quality, not bundle pricing. But conceding SMB is a mistake. SMB is where Zoom's PLG engine works best, and SMB companies eventually become mid-market and enterprise as they grow. If you lose SMB, you lose the bottom-up adoption funnel that feeds enterprise deals. The right approach is to compete in all segments but with different weapons: PLG and product experience for SMB (where Teams is clunky), and enterprise features + integrations for large accounts (where Teams is ecosystem-locked). Don't retreat from any segment — compete differently in each.`},
+        {text:`Launch an aggressive marketing campaign highlighting Teams' weaknesses: reliability issues, confusing UX, and Microsoft's history of antitrust behaviour. Make the comparison explicit. Challenge customers to "try both and decide."`, score:1, feedback:`Negative marketing against Microsoft is a losing strategy for three reasons: (1) Microsoft has 100x the marketing budget and will outspend you. (2) Attacking a customer's existing tool (Office 365) insults their judgment and makes them defensive. (3) "Try both" actually helps Teams — Teams' weakness is adoption (people don't know it exists), and a comparison campaign raises awareness. The better strategy is to make Zoom's advantages obvious through experience, not through attack ads. Let the product speak, invest in integrations, and build features Microsoft can't bundle. Never punch up against a company with infinite resources.`}
+      ],
+      competency:[4,3,2]
+    },
+    {
+      scenario:`2021 — Zoom Apps Marketplace: Becoming a Platform\n\nZoom is launching the Zoom Apps marketplace — third-party apps that run inside Zoom meetings (polls, whiteboards, project management, games). The goal: transform Zoom from a meetings tool into a meetings platform.\n\nGTM considerations:\n• Developer ecosystem needs critical mass: apps need users, users need apps\n• Revenue model: take a 15% commission on paid apps? Or free for developers to encourage adoption?\n• Launch partners: which categories of apps to prioritise?\n• Risk: if apps are bad, they degrade the Zoom experience and damage the brand`,
+      question:`How should Zoom GTM the Apps marketplace?`,
+      options:[
+        {text:`Launch with 20-30 curated apps from established partners (Salesforce, HubSpot, Asana, Miro). Take 0% commission for the first year to attract developers. Promote apps inside Zoom meetings with contextual suggestions ("scheduling a follow-up? Try the Calendly app"). Quality over quantity — curate strictly to protect the meeting experience.`, score:3, feedback:`This is the optimal platform GTM approach. Curated launch solves the cold-start problem: 20-30 quality apps from known brands gives users immediate value and gives the marketplace credibility. 0% commission for year one is the right play — you need supply (apps) before you can extract a marketplace tax. Developers will build for Zoom if there's no revenue share barrier. In-meeting contextual suggestions are brilliant distribution: you're surfacing apps at the exact moment users need them (not in a separate "app store" they'll never visit). Strict curation protects brand quality — one bad app that crashes a CEO's board meeting could kill the platform.`},
+        {text:`Open the marketplace to all developers with minimal review. The more apps, the better — let the market decide which apps win. Take a 30% commission (like Apple) from day one. Developers will build where users are, and Zoom has 300M+ daily participants.`, score:1, feedback:`The "open marketplace + 30% commission" approach copies Apple's App Store model, but Zoom's marketplace is fundamentally different. Apple controls the only way to distribute iPhone apps — developers have no choice but to accept 30%. Zoom competes with other platforms (Microsoft Teams, Slack) for developer attention. A 30% commission when competitors charge 0-15% will push developers to build for Teams first. And an open marketplace with minimal review creates quality risk: a buggy app that freezes during a Zoom meeting damages Zoom's brand, not the app developer's brand. You need curation to protect the meeting experience.`},
+        {text:`Don't build a marketplace at all. Focus on building first-party apps (Zoom Whiteboard, Zoom Polls, Zoom Notes) that are deeply integrated with the meeting experience. Third-party apps create quality and security risks that Zoom can't control.`, score:1, feedback:`First-party apps are important (Zoom did build Whiteboard and Notes), but they can't cover every use case. A PM needs Jira integration. A sales rep needs Salesforce integration. A teacher needs LMS integration. Building all of these in-house would require 10x the engineering team and still produce worse products than the specialists. The platform approach (let Salesforce build the Salesforce integration) is more scalable and creates switching costs: once a company uses Zoom + 5 integrated apps, leaving Zoom means replacing the entire workflow. That's platform lock-in — the most defensible competitive moat.`},
+        {text:`Launch with consumer/fun apps first — games, icebreakers, virtual backgrounds, filters. These go viral on social media and create buzz for the marketplace. Enterprise productivity apps (Salesforce, Asana) can come in phase 2 once the marketplace has momentum.`, score:1, feedback:`Consumer apps create social media buzz but don't build a durable platform. IT buyers who control enterprise Zoom contracts don't care about meeting games — they care about Salesforce integration, compliance tools, and productivity apps. If the marketplace launches as "fun meeting games," enterprise buyers will dismiss it as a consumer feature and not invest in building workflows around it. Enterprise productivity apps create stickiness and revenue. Fun apps create a news cycle. For Zoom's business model (primarily B2B), enterprise apps must come first. You can add fun apps later as a complement, not as the foundation.`}
+      ],
+      competency:[8,0,2]
+    },
+    {
+      scenario:`2022 — Post-COVID: Zoom's Growth Slows Dramatically\n\nThe pandemic boom is over. Zoom's revenue growth decelerates from 326% (Q2 2021) to 8% (Q2 2022). Daily meeting participants stabilise around 300M. The stock drops 80% from its peak.\n\nThe market narrative: "Zoom is a pandemic stock. COVID is over, and people are going back to offices."\n\nBut the reality: remote and hybrid work is permanent for 40%+ of knowledge workers. The opportunity hasn't disappeared — it's normalised. The GTM challenge has shifted from "grow at all costs" to "grow efficiently and expand the platform."`,
+      question:`How should Zoom reposition its GTM for the post-COVID era?`,
+      options:[
+        {text:`Shift the GTM narrative from "remote work tool" to "hybrid work platform." The story isn't about video meetings — it's about how work happens across office, home, and everywhere in between. Launch Zoom Workplace: meetings + phone + chat + rooms + whiteboard + email + calendar in one platform. Expand the value metric from "meetings" to "work."`, score:3, feedback:`This is exactly what Zoom did, rebranding the product as "Zoom Workplace" in 2024. The strategic logic: "video meetings" is a commoditised feature (Microsoft, Google offer it free). "Hybrid work platform" is a category you can own. The GTM shift from selling meetings to selling workplace productivity dramatically expands the upsell opportunity per customer: instead of $15/user/month for meetings, you sell $25-40/user/month for the full platform. The narrative shift also counters the "pandemic stock" framing: "We're not a pandemic beneficiary — we're building how the future of work actually works." This reposition changes analyst models from "video conferencing TAM" to "workplace productivity TAM" — a 5x larger market.`},
+        {text:`Cut costs aggressively and focus on profitability. Growth is slowing, so pivot from growth metrics to efficiency metrics. Reduce headcount 15%, cut marketing spend, and show Wall Street that Zoom can be a highly profitable mature business. The stock is being punished for decelerating growth — give investors a profitability story instead.`, score:2, feedback:`Cost discipline is important (Zoom did lay off 15% of staff in 2023), but cost-cutting isn't a GTM strategy — it's a financial strategy. If all you offer Wall Street is profitability without growth, Zoom gets valued as a mature, declining business (5-10x earnings). That's a permanent valuation compression. You need a growth narrative: what's the next $1B+ revenue opportunity? Without new GTM bets (phone, workplace platform, AI), Zoom becomes a well-run video tool with no future upside. Combine efficiency with expansion: cut costs in mature product lines, invest aggressively in new products.`},
+        {text:`Go all-in on AI. The AI wave (ChatGPT, Copilot) is the biggest narrative shift since COVID. Launch AI-powered meeting features: automatic summaries, action items, real-time translation, AI meeting coach. Position Zoom as "the AI-first communications platform." This gives Wall Street a new growth narrative.`, score:2, feedback:`AI features are an important part of Zoom's post-COVID strategy (they did launch Zoom AI Companion), but AI alone isn't a GTM strategy. AI features are table stakes — Microsoft (Copilot), Google (Duet AI), and every competitor is adding AI to their tools. Positioning as "AI-first" when Microsoft has $10B+ invested in OpenAI is not credible. AI should be a capability layer across the platform, not the core positioning. The stronger GTM play is "hybrid work platform powered by AI" — the platform story is the differentiation, AI is the enhancement. Lead with the platform, not the technology.`},
+        {text:`Acquire a major company to expand the platform. Buy Calendly ($3B), Five9 ($3B), or Notion ($10B). Each acquisition adds a product category Zoom doesn't have and brings existing customers. Inorganic growth is faster than building from scratch.`, score:1, feedback:`Acquisition-led GTM is expensive, risky, and historically has a poor track record in tech (Cisco's acquisitions, Microsoft's Skype purchase). Zoom's stock is down 80% — using depressed stock for acquisitions means massive dilution. Cash acquisitions drain the war chest. Integration takes 12-18 months during which both products suffer. And acquired companies have their own GTM motions that conflict with Zoom's PLG model. Zoom's Five9 acquisition attempt ($14.7B) was actually blocked by Five9 shareholders who didn't want Zoom stock at declining prices. Organic expansion (build Zoom Phone, Zoom Workplace) is slower but more sustainable.`}
+      ],
+      competency:[3,9,0]
+    }
+  ],
+  2: [
+    {
+      scenario:`2013 — Eric Yuan's Fundraising Pitch: Selling the GTM Vision\n\nEric Yuan is pitching VCs for Zoom's Series A. He's asking for $6M. Every VC asks the same question: "There are already 10 video conferencing tools. WebEx has 60% market share. Why will Zoom win?"\n\nEric has a great product (better video quality) but needs a compelling GTM narrative to close the round. The pitch needs to explain not just why the product is better, but how it will reach customers, grow, and compete against entrenched incumbents with 100x the resources.`,
+      question:`What GTM narrative should Eric pitch to VCs?`,
+      options:[
+        {text:`"Our GTM is the product itself. Every Zoom meeting is a product demo — when one person hosts a Zoom call, every participant experiences our quality. Unlike WebEx, which requires IT procurement, anyone can start a free Zoom meeting. Our viral coefficient means our CAC approaches zero at scale. The incumbents' GTM is sales teams selling to CIOs. Ours is delighting users one meeting at a time."`, score:3, feedback:`This is the pitch that resonates with VCs because it describes a fundamentally different GTM motion than incumbents. WebEx spends $50M/year on sales teams selling to CIOs. Zoom spends ~$0 because the product spreads through meetings. This isn't just "we're cheaper to acquire customers" — it's a structural GTM advantage that incumbents can't replicate without cannibalising their own sales model. VCs love GTM pitches that show a "wedge" — a mechanism for entering a market that incumbents can't easily defend against. Zoom's wedge was bottom-up adoption that bypassed the CIO entirely.`},
+        {text:`"We'll win because our video quality is 10x better. Eric built WebEx — he knows every technical flaw and has rebuilt video from scratch using modern cloud architecture. The product is objectively superior in every measurable dimension: latency, resolution, reliability, and simplicity."`, score:1, feedback:`Product quality alone doesn't convince VCs. They've seen dozens of "technically superior" products lose to inferior ones with better distribution (Google+ vs. Facebook, Betamax vs. VHS). VCs want to know HOW the better product reaches customers, not just THAT it's better. "10x better quality" raises the question: "So what? WebEx has 60% market share and enterprise contracts. How do you get in the door?" A pitch that's all product and no GTM tells VCs the founder doesn't understand distribution — the biggest risk factor for startups.`},
+        {text:`"We'll undercut WebEx on price by 70% and win enterprise contracts through competitive displacement. Fortune 500 companies are paying $25/user/month for WebEx — we'll offer comparable features for $7/user/month. The cost savings pitch writes itself for procurement teams."`, score:1, feedback:`Price disruption sounds logical but fails for three reasons: (1) Cisco can afford to match $7/month — WebEx is a small part of their $50B revenue. (2) Enterprise contracts have 3-5 year lock-ins — you can't win them with a lower price until the contract expires. (3) VCs don't fund price wars — they fund businesses with defensible advantages. "We're cheaper" isn't a moat. Any competitor can lower prices. A VC hearing "our GTM is lower pricing" worries about margin compression and a race to the bottom. The pitch needs to show a structural advantage, not a pricing one.`},
+        {text:`"We'll partner with major telecom carriers (AT&T, Verizon) to distribute Zoom to their enterprise customers. Telcos need cloud video products and have existing relationships with every Fortune 500 company. We provide the product, they provide the distribution."`, score:1, feedback:`Channel partnerships with telcos sound like instant scale, but VCs know the reality: telecom partnerships take 12-18 months to negotiate, involve heavy customisation, strip your brand (it becomes "AT&T Video Conferencing powered by Zoom"), and the telco controls pricing and customer relationships. You become a white-label vendor, not a brand. Telco partnerships also create dependency — if AT&T switches to a competitor, you lose the entire channel overnight. VCs want to see organic, self-sustaining growth mechanisms, not dependency on a single channel partner.`}
+      ],
+      competency:[7,3,0]
+    },
+    {
+      scenario:`2015 — International Expansion: Entering the APAC Market\n\nZoom is US-dominant (85% of revenue). The team debates how to enter Asia-Pacific (APAC), where WebEx, Skype, and local tools (DingTalk in China, Line in Japan) dominate.\n\nApproach A — PLG International: Let organic adoption grow in APAC. Users who join Zoom meetings with US-based colleagues will spread it locally. No sales team or localisation investment required.\n\nApproach B — Localised GTM: Open offices in Tokyo, Sydney, and Singapore. Hire local sales teams. Localise the product (language, payment methods, data residency). Cost: $15M/year.\n\nApproach C — Partner-Led: Sign distribution agreements with local telecom/IT companies in each APAC market. They sell Zoom under their brand.`,
+      question:`What's the right APAC GTM approach?`,
+      options:[
+        {text:`Start with PLG International (Approach A) for 6-12 months to identify which APAC markets have organic demand. Then invest in Localised GTM (Approach B) for the top 2-3 markets showing traction. Data-driven expansion, not assumptions.`, score:3, feedback:`This "follow the demand" approach is the most capital-efficient international GTM. PLG gives you free market research: which APAC countries are already adopting Zoom organically? If Japan shows 50K free users growing 20% MoM while Indonesia shows 5K users flat, Japan is clearly the first market for investment. Spending $15M to open offices in 3 countries simultaneously is a bet on assumptions. Spending $0 on PLG for 6 months gives you data, then spending $5M on the one country with the most traction is a bet on evidence. Zoom did roughly this: organic growth in Australia and Japan preceded local office investment.`},
+        {text:`Go directly to Approach B — open offices in Tokyo, Sydney, and Singapore simultaneously. APAC is a $15B market. If you wait for organic adoption, competitors (DingTalk, Teams) will lock up the market. Speed matters more than efficiency for international expansion.`, score:1, feedback:`$15M/year for 3 simultaneous market entries is a high-risk bet. Each market has different dynamics: Japan values local support and relationships (needs heavy investment). Australia is culturally similar to the US (lighter investment). Singapore is a hub but a small market. Treating them the same with identical investment is inefficient. More importantly, hiring local sales teams before you understand local buyer behaviour leads to the wrong GTM motion: you might hire enterprise reps when the market is PLG, or build a channel strategy when direct is more effective. Let PLG data tell you what each market needs before investing.`},
+        {text:`Approach C — partner with local telcos in each market. NTT in Japan, Telstra in Australia, SingTel in Singapore. They know the local market, have existing enterprise relationships, and can sell Zoom immediately without the cost of opening offices.`, score:2, feedback:`Telco partnerships provide fast market entry but at significant cost to brand and control. In Japan, being "NTT's video tool" positions Zoom as a telco add-on, not a premium product. The partner controls pricing, customer relationships, and competitive positioning. If NTT decides to promote their own video solution (or Microsoft Teams), your APAC revenue disappears overnight. Partnerships can be a component of APAC GTM (especially for enterprise accounts in Japan where relationships matter), but not the primary strategy. Use partnerships to supplement direct/PLG, not replace them.`},
+        {text:`Focus exclusively on China — it's the largest APAC market and the biggest opportunity. Open a Shanghai office, build a China-specific product with local data centres, and compete with DingTalk and WeChat Work directly.`, score:1, feedback:`China is a uniquely difficult market for US tech companies: Great Firewall restrictions, data sovereignty laws, government relationships, and dominant local competitors (DingTalk has 500M users). Entering China requires a massive investment in localisation, compliance, and local operations — easily $20M+ before seeing any revenue. The competitive dynamics are different (DingTalk is free and integrated with Alibaba's ecosystem), the sales motion is different (government relationships matter), and the regulatory risks are significant. Zoom did eventually enter China but through a local partner, not by building a massive direct presence.`}
+      ],
+      competency:[9,2,8]
+    },
+    {
+      scenario:`2018 — Zoom Rooms: GTM for Hardware-Software Bundle\n\nZoom is launching Zoom Rooms — a software+hardware solution that turns conference rooms into one-touch video meeting rooms. Partner hardware from Neat, Poly, and DTEN.\n\nGTM challenge: conference room AV is traditionally sold by audiovisual integrators and IT resellers — a channel Zoom doesn't have relationships with. The buyer is the facilities/IT team, not individual users. PLG doesn't work here (you can't "try Zoom Rooms for free" in a conference room).\n\nZoom Rooms is priced at $49/room/month (software) + $2,000-$10,000 hardware (partner devices).\n\nCurrent Zoom revenue: $330M, 95% from cloud subscriptions.`,
+      question:`How should Zoom GTM this hardware-adjacent product?`,
+      options:[
+        {text:`Sell Zoom Rooms through existing Zoom customers as an upsell. The pitch: "Your employees already love Zoom on their laptops — now bring the same experience to every conference room." Use the existing customer success team for the software sale, and partner with AV integrators (Crestron, AVI-SPL) for the hardware installation. Let the CS team own the relationship, the integrator owns the installation.`, score:3, feedback:`This leverages Zoom's strongest GTM asset: 70K+ paying customers who already love the product. The upsell pitch is simple: "your employees already use Zoom — why should conference rooms be different?" The CS team doesn't need to cold-sell; they're expanding an existing relationship. Partnering with AV integrators for hardware is smart: they have the installation expertise and conference room relationships that Zoom lacks. This hybrid model (Zoom owns the software relationship + integrator owns the hardware) avoids building an expensive hardware sales channel from scratch while maintaining control over the customer relationship and recurring revenue.`},
+        {text:`Build a dedicated Zoom Rooms sales team that sells the complete solution (software + hardware). Own the entire relationship. Conference room buyers want one vendor, one contract, one support number. Don't fragment the experience across Zoom and hardware partners.`, score:1, feedback:`A dedicated hardware sales team requires completely different skills than software sales: AV expertise, site surveys, installation management, and hardware support. Building this from scratch costs $10M+ and takes 12+ months. Conference room AV is a specialised industry with established integrators who've been doing this for decades. Trying to replace them with a Zoom sales team means learning a new industry from scratch. The "one vendor" pitch sounds clean but the execution is messy: Zoom would need to handle hardware inventory, shipping, installation scheduling, and physical site support — none of which are core competencies.`},
+        {text:`PLG-adjacent: offer a "Zoom Rooms Personal" for $25/month that turns any large display + webcam into a basic meeting room. Lower the hardware cost to ~$500 (just a webcam mount and microphone). This democratises conference room video the way Zoom democratised personal video.`, score:2, feedback:`Interesting disruption of the traditional AV market — making conference room video affordable is aligned with Zoom's "democratise video" mission. A $500 setup with $25/month is accessible to small businesses that can't afford $10K conference room systems. However, this creates a market positioning problem: is Zoom Rooms a premium enterprise solution (competing with Cisco Room Systems at $10K+) or a budget alternative? You can't be both. The premium positioning drives higher revenue per room and signals quality to enterprise buyers. A budget option might win small offices but undermine the premium sale. Zoom did eventually offer a range, but the initial GTM was premium-focused.`},
+        {text:`Don't launch Zoom Rooms at all. Conference room hardware is a low-margin, high-support business that distracts from the high-margin cloud subscription model. Let AV companies build Zoom-compatible room systems on their own — Zoom provides the software platform, partners build the hardware.`, score:1, feedback:`Letting partners build Zoom Rooms without Zoom's involvement means losing control over the conference room experience. If a Poly/DTEN device running Zoom has a bad experience, users blame Zoom — not the hardware vendor. More strategically, conference rooms are where enterprise buying decisions are reinforced: when the CEO's board meeting runs flawlessly on Zoom Rooms, that CEO commits the entire company to Zoom. Conference rooms are a GTM channel for enterprise expansion, not just a product line. The $49/room/month revenue is nice, but the strategic value of owning the conference room experience is worth far more.`}
+      ],
+      competency:[6,2,8]
+    },
+    {
+      scenario:`2019 — Zoom's Competitive Response to Microsoft Teams Free\n\nMicrosoft announces that Teams will be available free for all Microsoft 365 subscribers — effectively giving away video conferencing to 260 million users. Analysts predict Zoom's growth will stall.\n\nInternal analysis:\n• 40% of Zoom's enterprise pipeline involves organisations that already have Microsoft 365\n• Teams' video quality is improving rapidly\n• But Teams adoption lags behind availability — many M365 orgs haven't activated Teams\n• Zoom's NPS is 72 (vs. Teams' estimated 28)\n\nThe board asks for a competitive GTM response.`,
+      question:`How should Zoom respond to Teams going free?`,
+      options:[
+        {text:`Accelerate enterprise conversion before Teams activates. If 40% of pipeline has M365, those accounts will eventually discover Teams is "free." Move NOW: offer 30-day free enterprise trials, expedited onboarding, and "locked-in" annual pricing that's competitive but not desperate. Convert them before their IT department rolls out Teams. Speed is the strategy.`, score:3, feedback:`Timing is the critical variable. There's a window between "Microsoft bundles Teams" and "IT departments actually roll out Teams to users." In that window, Zoom can lock in multi-year enterprise contracts. Once an organisation has signed a Zoom contract and deployed it to 5,000 users, the switching cost to Teams is enormous — even though Teams is "free," the migration cost isn't. The 30-day free trial removes the commitment barrier, the expedited onboarding gets users habituated, and annual pricing creates a lock-in. This is a land-grab GTM motion: capture territory now because the cost of capture increases dramatically once Teams is deployed.`},
+        {text:`Differentiate on the user experience. Publish a detailed Zoom vs. Teams comparison showing Zoom's advantages: better video quality, simpler UX, faster join times, higher reliability. Run ads targeting "frustrated Teams users" with the message "Don't settle for 'good enough' video."`, score:2, feedback:`Feature comparison marketing has limited effectiveness against a "free" product. When the CIO says "Teams is free, why are we paying for Zoom?" no amount of feature comparison overcomes the $0 price tag. Comparison marketing also gives Teams free publicity — some readers will think "I didn't know Teams could do that" and try Teams instead. The "frustrated Teams users" targeting might work for bottom-up adoption, but the decision-makers who control budgets are often different from the users who feel the frustration. Direct competitive messaging should be a supporting element, not the primary GTM response.`},
+        {text:`Pivot to selling the platform, not meetings. If video meetings become a commodity (free with Teams/Google), Zoom's standalone meeting product loses value. Accelerate Zoom Phone, Zoom Chat, and Zoom Events — make the buying decision about "unified communications platform" not "meeting tool." CIOs won't replace Zoom + Phone + Chat for just Teams video.`, score:2, feedback:`This is strategically correct for the long term — platform stickiness beats feature competition. But in 2019, Zoom Phone was brand new and Zoom Chat was basic. Selling a "platform" you haven't fully built is risky: you promise unified communications but deliver great meetings plus mediocre phone and chat. CIOs who buy the platform vision and get a half-built platform become detractors, not advocates. The right timing: accelerate enterprise conversion NOW (while you can) and build the platform story over 18-24 months. By the time contracts come up for renewal, the platform should be mature enough to be the reason customers stay.`},
+        {text:`Don't react. Zoom's NPS of 72 vs. Teams' 28 proves users love Zoom. Competing on "free" is a race to the bottom. Stay focused on product quality and let the user experience speak for itself. The best products always win regardless of pricing.`, score:1, feedback:`"The best product always wins" is a comforting myth that contradicts market history. Internet Explorer beat Netscape despite being worse. Microsoft Office beat Lotus and WordPerfect despite being comparable. When a dominant player bundles a "good enough" competitor for free, the better standalone product often loses. NPS of 72 vs. 28 matters for user satisfaction but not for procurement decisions. CIOs make decisions based on TCO, integration, and vendor consolidation — not NPS scores. "Don't react" means losing 40% of your pipeline to a competitor that's technically free. That's not confidence, it's complacency.`}
+      ],
+      competency:[4,0,6]
+    },
+    {
+      scenario:`2020 — Zoom Pricing Under Pressure: Should We Raise Prices?\n\nZoom has 300M+ daily meeting participants and revenue is growing 326% YoY. Wall Street expects this growth to continue. The CFO suggests raising prices 15-20% across all tiers.\n\nArguments for:\n• Demand far exceeds supply — classic pricing power\n• Server costs have increased 3x during COVID\n• Competitors are raising prices too\n• Wall Street rewards revenue growth (price increase = instant revenue bump)\n\nArguments against:\n• COVID has created goodwill — raising prices during a crisis looks bad\n• Free users are future enterprise customers — don't give them reason to explore alternatives\n• Microsoft Teams is free — any price increase makes the "free Teams" pitch stronger`,
+      question:`What's the right pricing strategy during peak COVID demand?`,
+      options:[
+        {text:`Don't raise list prices. Instead, introduce a new premium tier above Enterprise ("Enterprise Plus") with advanced features — AI transcription, 500-person meetings, custom branding, dedicated support. This captures willingness-to-pay from large organisations without raising prices on existing customers. New revenue from new value, not price extraction.`, score:3, feedback:`This is the pricing masterstroke: capture more revenue per customer by delivering more value, not by charging more for the same product. A new premium tier ($30-40/user/month vs. current Enterprise at $20) targets the exact customers with highest willingness-to-pay: large enterprises using Zoom for mission-critical communication during COVID. These customers WANT to pay for premium features — they just need a product to buy. This approach preserves goodwill (no price increases), strengthens the competitive position (more differentiation from free Teams), and creates a natural upsell path that the sales team can execute immediately. Revenue grows from tier migration, not price increases.`},
+        {text:`Raise prices 15% across all tiers effective immediately. Demand is at an all-time high, competitors are capacity-constrained, and server costs have tripled. This is basic economics — when demand exceeds supply, prices should rise. Any company that doesn't raise prices during peak demand is leaving money on the table.`, score:1, feedback:`Technically correct economics, terrible GTM strategy. Raising prices during a pandemic — when schools, hospitals, and nonprofits depend on Zoom — would generate devastating press coverage. "Zoom raises prices during pandemic" would be a CNN headline. The brand damage would cost far more than the 15% revenue bump. More importantly, every price increase strengthens Microsoft's GTM pitch: "Teams is free with Office 365 you already have." A 15% increase might push the 40% of pipeline that has M365 to activate Teams instead. Short-term revenue maximisation through price increases is the wrong optimisation when long-term market share is at stake.`},
+        {text:`Lower the free plan price (make the 40-minute limit 60 minutes) and slightly raise paid plan prices (10%). The free plan improvement generates goodwill and drives adoption, while the paid price increase captures value from customers who clearly have willingness to pay.`, score:2, feedback:`This is clever but contradictory. Extending the free limit to 60 minutes reduces the upgrade friction that drives conversion — the 40-minute limit is Zoom's most effective conversion mechanism. At 60 minutes, many meetings fit within the free tier (average Zoom meeting is 54 minutes). You'd be increasing free tier usage (higher server costs) while reducing conversion (lower revenue per free user). The paid tier increase adds marginal revenue but creates the same PR risk as a full price increase. The better approach is to leave the free plan as-is (it's working perfectly) and create new premium value that justifies additional spend.`},
+        {text:`Offer annual contracts at a 20% discount to lock in revenue during the surge. Don't change list prices, but incentivise annual commitment. This locks in customers during peak demand, improves cash flow predictability, and creates switching costs before COVID subsides.`, score:2, feedback:`Annual contract incentives are smart — locking customers into annual deals during peak usage means they're still paying when COVID ends and the urgency fades. This creates cash flow predictability that Wall Street values. However, 20% annual discount is steep and sets a precedent that's hard to reverse. More importantly, this doesn't capture the upside from customers willing to pay MORE — large enterprises using Zoom for mission-critical operations would pay premium prices for premium features. Annual discounts optimise for retention, but you also need to optimise for expansion (upselling to premium tiers). Both strategies should run in parallel.`}
+      ],
+      competency:[1,5,4]
+    },
+    {
+      scenario:`2021 — Zoom Events: Entering the Virtual Events Market\n\nZoom is launching Zoom Events — a product for hosting virtual conferences, webinars, and hybrid events. The virtual events market exploded during COVID ($100B+ projected by 2025) but is highly competitive (Hopin, Eventbrite, Cvent, Microsoft).\n\nGTM question: Zoom Events is a different product with different buyers (event planners, marketing teams) than Zoom Meetings (everyone). The sales motion, pricing, and competitive landscape are all different.\n\nPricing options:\n• Per-event pricing: $100-1,000 per event based on attendee count\n• Per-license: $99/month unlimited events\n• Bundled with Zoom One: included in the $25/user platform bundle`,
+      question:`What's the right GTM and pricing approach for Zoom Events?`,
+      options:[
+        {text:`Per-license pricing ($99/month for unlimited events), sold as an add-on to existing Zoom accounts. GTM: use the existing customer base — every Zoom customer is a potential Zoom Events customer. Position as "you already use Zoom for meetings, now use it for events." The existing relationship and trust make the sale easier. Per-event pricing creates billing friction and unpredictable revenue.`, score:3, feedback:`Per-license pricing is the right model because it creates predictable recurring revenue and aligns with how event planners budget (monthly/annual, not per-event). Selling through the existing customer base is GTM efficiency at its best: your sales team already has relationships with the event planner's IT department, Zoom is already approved as a vendor, and the "same platform" pitch reduces the evaluation effort. Per-event pricing creates billing complexity, makes customers hesitant to experiment ("will this event be worth $500?"), and produces spiky, unpredictable revenue. The $99/month price point is accessible enough for small event teams and scalable enough for large organisations.`},
+        {text:`Per-event pricing based on attendee count. A 100-person webinar costs $200, a 1,000-person conference costs $2,000. This usage-based model means customers only pay for what they use, and large events generate large revenue. Event planners are used to per-event budgeting.`, score:2, feedback:`Per-event pricing aligns with how event planners traditionally budget (per event, not per month). It captures more revenue from large events and creates a low barrier to entry for small events. However, it has GTM weaknesses: (1) Revenue is unpredictable and spiky — event seasons create peaks and troughs. (2) It discourages experimentation — customers won't host small informal events if they're charged per event. (3) The billing model is complex: what counts as an "attendee"? What about no-shows? (4) It doesn't create the monthly recurring revenue that SaaS investors reward. Subscription pricing is better for building a predictable, growing business.`},
+        {text:`Bundle it free with Zoom One ($25/user/month platform subscription). Events should be a platform feature, not a separate product. Bundling drives platform adoption and differentiates Zoom One from Microsoft Teams (which doesn't have events). Don't create a separate revenue stream — use Events to make the platform more valuable.`, score:1, feedback:`Giving away a $99/month product for free undervalues it and leaves significant revenue on the table. Events requires substantial infrastructure (streaming at scale, networking features, event management tools), and "free" doesn't fund the investment needed to compete with Hopin and Cvent. Bundling also creates a positioning problem: event planners have specific needs (registration, analytics, sponsor integrations) that "one feature in a platform bundle" doesn't address credibly. Event planners want a dedicated events product, not a meeting tool with events bolted on. Separate pricing signals that Events is a serious, purpose-built product.`},
+        {text:`Launch with a freemium model: free events up to 100 attendees, paid for larger events. This mirrors Zoom's successful free meeting strategy and lets event planners try the product before buying. Scale the pricing with attendee count to capture value from larger events.`, score:2, feedback:`The freemium instinct is right — it worked brilliantly for Zoom Meetings. But events and meetings have fundamentally different usage patterns. Meetings happen daily (high-frequency, builds habit). Events happen monthly or quarterly (low-frequency, doesn't build daily habit). Freemium works when users experience value frequently enough to build dependency. A free 100-person event once a quarter doesn't create enough habit to drive conversion. For low-frequency products, free trials (try for 30 days) work better than freemium (use basic features forever). The upgrade motivation for events is "my next event is bigger" not "I use this every day."`}
+      ],
+      competency:[1,0,9]
+    },
+    {
+      scenario:`2022 — AI Features: GTM for Zoom IQ\n\nZoom is launching AI-powered features under "Zoom IQ" (later renamed Zoom AI Companion): meeting summaries, smart recordings with chapters, real-time translation, and sentiment analysis. Every competitor (Microsoft Copilot, Google Duet AI, Otter.ai) is also launching AI features.\n\nGTM question: How do you price and package AI features in a market where competitors are including AI for "free" (Microsoft bundles Copilot with premium Office 365, Google includes Duet AI in Workspace)?`,
+      question:`What's the right GTM approach for Zoom's AI features?`,
+      options:[
+        {text:`Include AI features free with all paid Zoom plans. Don't charge extra for AI — use it as a competitive differentiator that justifies the existing price. While Microsoft charges $30/user/month extra for Copilot, Zoom includes AI at no additional cost. Position: "Why pay Microsoft $30/user for AI when Zoom gives you AI free?"`, score:3, feedback:`This is exactly what Zoom did with AI Companion — included free with paid plans. The strategic logic: (1) When Microsoft charges $30 extra for Copilot, "Zoom includes AI free" is a powerful competitive narrative. (2) AI features increase product stickiness — once users depend on meeting summaries, they can't switch without losing that workflow. (3) AI feature usage generates data that improves the AI, creating a flywheel. (4) The incremental cost of AI per user is low ($1-3/month in compute) vs. the retention and competitive value. This is a "subsidise features for strategic advantage" play — the same logic as Zoom's free plan. You're trading short-term AI revenue for long-term platform lock-in.`},
+        {text:`Launch AI as a premium add-on at $10/user/month. AI features have real cost (compute, model training) and real value (productivity gains). Charging for AI creates a new revenue stream and signals that the features are premium, not basic. Offer a free trial to demonstrate value.`, score:2, feedback:`Charging for AI is a legitimate monetisation strategy, and $10/user is reasonable. But it creates a GTM problem: Microsoft charges $30 for Copilot (expensive), Google includes Duet in Workspace (free-ish), and now Zoom charges $10 (middle). The competitive comparison becomes confusing. More importantly, if AI features are behind a paywall, adoption will be low — most companies won't approve an additional per-user spend for "nice to have" AI. Low adoption means less data, which means worse AI, which means less reason to adopt. The flywheel stalls. Free inclusion drives high adoption, which drives better AI, which drives stickiness — a self-reinforcing loop.`},
+        {text:`Tiered AI: basic AI features free (meeting summaries), advanced AI features paid (real-time translation, sentiment analysis, AI-generated action items). This captures value from power users while giving everyone a taste of AI capability.`, score:2, feedback:`Tiered AI is a reasonable middle ground, but it adds complexity to an already complex pricing structure (Free/Pro/Business/Enterprise). Customers will ask: "Which AI features are in which tier? Do I need the AI add-on or does my Enterprise plan include it?" Feature-tier complexity is the enemy of PLG — it creates confusion and slows adoption. The simpler message ("AI is free with Zoom") is more powerful for competitive positioning and easier for sales teams to communicate. Simplicity in pricing is a competitive advantage, especially against Microsoft whose licensing is notoriously complex.`},
+        {text:`Don't bundle AI with Zoom at all. Launch AI features as a separate product — "Zoom AI" — that works with any video platform (Zoom, Teams, Google Meet). This positions Zoom as an AI company, not just a video company, and expands the addressable market beyond Zoom users.`, score:1, feedback:`Building AI that works with competitor platforms sounds like a bigger opportunity, but it undermines Zoom's core business. If "Zoom AI" works with Teams, what's the reason to stay on Zoom? The AI features should be a reason to USE Zoom, not a standalone product that's platform-agnostic. Additionally, building multi-platform AI is 3x the engineering effort (integrate with Zoom, Teams, and Meet APIs). Otter.ai already plays this role and has a head start. Zoom's advantage is deep integration with its own platform — the AI can access call quality data, user behaviour, and meeting context that a third-party tool can't. Keep AI as a Zoom differentiator, not a separate product.`}
+      ],
+      competency:[1,5,4]
+    },
+    {
+      scenario:`2023 — Zoom's Rebrand: From "Zoom Meetings" to "Zoom Workplace"\n\nZoom is rebranding from a meetings company to a "workplace platform." The product suite now includes: Meetings, Phone, Chat, Whiteboard, Notes, Clips, Events, Rooms, and AI Companion.\n\nThe GTM challenge: customers think "Zoom = video calls." Changing this perception requires more than a name change. The sales team reports that 70% of enterprise customers don't know Zoom has phone and chat products.\n\nThe marketing team proposes a $50M brand campaign. The product team proposes letting the product speak for itself. The sales team proposes enterprise-focused account expansion.`,
+      question:`How do you GTM the Zoom Workplace rebrand?`,
+      options:[
+        {text:`All three, but sequenced. Phase 1 (Immediate): Sales-led account expansion — have every account manager call their top 50 accounts and pitch "did you know Zoom has phone, chat, and AI?" Target existing customers first because they already trust Zoom. Phase 2 (Month 2-3): Product-driven discovery — surface Zoom Phone and Chat features inside the Zoom Meetings app so users naturally discover the platform. Phase 3 (Month 4+): Brand campaign reinforces the "Zoom Workplace" positioning in the market.`, score:3, feedback:`This sequencing is optimal because each phase builds on the last. Phase 1 (sales) generates immediate pipeline and revenue from the easiest-to-convert audience: existing customers who already trust and pay for Zoom. If 70% don't know about Phone/Chat, that's 70% untapped upsell opportunity. Phase 2 (product) drives bottom-up discovery at scale — if 300M daily users see "Try Zoom Phone" inside the app, millions will try it organically. Phase 3 (brand campaign) makes sense only after you have customer success stories from Phase 1 and adoption data from Phase 2 to validate the "Workplace" positioning. A $50M brand campaign without product traction is just noise.`},
+        {text:`Lead with the $50M brand campaign. Perception is the problem — 70% don't know about Zoom's other products because they've never heard about them. A major campaign (TV, digital, events) establishes "Zoom Workplace" in the market's consciousness. Everything else (sales, product) will be more effective once the brand perception shifts.`, score:1, feedback:`$50M on a brand campaign before proving the product resonates is burning money. Brand campaigns work when the message matches reality — if you say "Zoom Workplace is the complete platform" but the Phone and Chat products aren't as good as RingCentral and Slack, the campaign creates expectations the product can't meet. That's worse than no campaign. More practically: brand perception change in B2B takes 12-18 months. Enterprise buyers don't change their vendor strategy because they saw a TV ad. They change when their account manager shows them a compelling product and when they see peers adopting it. Sales and product drive B2B perception change; brand campaigns reinforce them.`},
+        {text:`Focus entirely on the product. Integrate all Zoom products into a seamless "Zoom Workplace" app. When users open Zoom for a meeting, they should see Chat, Phone, and Notes naturally integrated. If the product experience is seamless, users will discover the platform on their own. No sales push or brand campaign needed.`, score:2, feedback:`Product-led discovery is essential (and Zoom did integrate products into one app), but "build it and they'll come" doesn't work for platform repositioning. Users open Zoom, start a meeting, and close Zoom — they don't explore the navigation to discover Phone and Chat. Behaviour change requires more than availability; it requires prompting. And enterprise buyers who control Phone and Chat budgets don't experience the product day-to-day — they rely on sales pitches and analyst reports. Product integration is necessary but not sufficient. You need sales to reach decision-makers and marketing to shift analyst perception.`},
+        {text:`Don't rebrand at all. "Zoom" is one of the most recognizable brands in tech. The name is literally a verb ("let's zoom"). Changing to "Zoom Workplace" dilutes this incredible brand equity. Keep the brand, expand the product, and let the brand meaning evolve naturally as customers adopt more products.`, score:1, feedback:`"Zoom" as a verb for video calls is powerful — but it's also a constraint. When people say "let's zoom," they mean "let's video call." That association limits Zoom's ability to sell phone, chat, and platform products. If the perception stays "Zoom = video," every Phone and Chat sale requires overcoming the assumption that "Zoom is a meetings company." The rebrand to "Zoom Workplace" doesn't replace "zoom" as a verb — it expands the corporate positioning to justify a broader product strategy. Slack had the same challenge: "Slack = chat" limited their ability to sell Slack Platform. Salesforce solved it by creating "Salesforce Platform" alongside the CRM brand.`}
+      ],
+      competency:[3,0,6]
+    },
+    {
+      scenario:`2024 — Contact Centre: Should Zoom Enter Another New Market?\n\nZoom is considering launching Zoom Contact Centre — a cloud-based call centre solution for customer support teams. The CCaaS (Contact Centre as a Service) market is $17B and growing 20% YoY.\n\nThe opportunity:\n• 30% of Zoom's enterprise customers also buy contact centre software from other vendors\n• Contact centre is a natural extension of Zoom's communication platform\n• Competitors: Five9, Genesys, NICE, and Amazon Connect. All established.\n\nThe risk:\n• Contact centre is a deeply specialised market with complex requirements (ACD, IVR, WFM, quality management)\n• Buyers are customer service VPs, not IT — a buyer persona Zoom has never sold to\n• Failed expansion could distract from defending core meeting and phone revenue`,
+      question:`What's the right GTM approach for Zoom Contact Centre?`,
+      options:[
+        {text:`Enter the market but focus on the "integrated platform" wedge. Don't try to out-feature Five9 on contact centre capabilities. Instead, sell the integration story: "Your agents already use Zoom for internal meetings and phone. Now their customer calls, internal collaboration, and contact centre are on one platform. One vendor, one bill, one admin console." Target existing Zoom customers, not net-new contact centre buyers.`, score:3, feedback:`This "platform wedge" GTM is Zoom's strongest entry strategy. Competing feature-for-feature against Five9 (with 20+ years of contact centre expertise) is a losing battle. But competing on platform integration is a fight Zoom can win: no other vendor offers meetings + phone + chat + contact centre in one platform with one admin experience. Targeting existing customers means shorter sales cycles (trusted vendor), lower acquisition costs (existing relationship), and a compelling pitch (vendor consolidation saves money and complexity). The risk is that early customers need advanced contact centre features Zoom doesn't have yet — but if you set expectations correctly ("great for basic-to-mid contact centres, not for 10,000-agent operations"), you build the product while serving real customers.`},
+        {text:`Acquire Five9 for $14B. It's the fastest way to get a competitive contact centre product with an existing customer base. Build vs. buy analysis clearly favours acquisition: building a competitive product takes 3-5 years, while Five9 is ready now. The combined company becomes the dominant UCaaS + CCaaS platform.`, score:1, feedback:`Zoom actually tried this — the $14.7B Five9 acquisition was announced in July 2021 and terminated in September 2021 when Five9 shareholders voted against it. The deal failed because: (1) Zoom's stock was declining, making the all-stock deal less attractive. (2) The DOJ investigated due to Zoom's data routing through China. (3) Five9 shareholders felt the price undervalued their company. Even if the deal had closed, integration of a 2,000-person company with different culture, different products, and different GTM motions would take 2+ years. Large acquisitions for market entry have a poor track record. Organic entry with targeted investment is slower but more controllable.`},
+        {text:`Partner with Five9 or NICE instead of building. Offer a "Zoom + Five9" bundled solution sold through Zoom's sales team. This gives Zoom's enterprise customers a contact centre option without the R&D investment. Revenue share with the partner.`, score:2, feedback:`Partnerships provide a quick entry with low investment, and Zoom did explore this with Five9 before the acquisition attempt. The risk: you become a reseller for Five9, not a platform owner. Five9 controls the product roadmap, the feature set, and the customer experience. If Five9 decides to build their own meetings product (or partner with Microsoft), your "bundled" offering falls apart. For a product this strategic (unified communication platform), dependency on a partner creates long-term vulnerability. Partnerships can be a bridge strategy while you build your own product, but they shouldn't be the permanent GTM model for a core platform component.`},
+        {text:`Skip contact centre entirely. The CCaaS market is specialised, competitive, and requires expertise Zoom doesn't have. Stay focused on the workplace collaboration platform (meetings, phone, chat) where Zoom has natural advantages. Contact centre is a distraction that dilutes engineering and sales focus.`, score:1, feedback:`"Stay focused" sounds prudent but ignores the platform strategy. Zoom's vision is "one platform for all business communication." If contact centre is excluded, enterprise customers need two vendors (Zoom for internal + Five9 for external communication). That fragmentation is: (1) more expensive, (2) harder to administer, and (3) an opening for a competitor who offers both. Microsoft is already adding contact centre capabilities to Teams. If Microsoft achieves unified internal + external communication and Zoom doesn't, Zoom loses the platform positioning. Contact centre isn't a distraction — it's a strategic necessity for the platform vision.`}
+      ],
+      competency:[9,6,8]
+    },
+    {
+      scenario:`2024 — Zoom's Developer Platform: Building an Ecosystem\n\nZoom has 3,500+ apps in its marketplace and 1M+ developers registered. But most apps have low adoption, and the developer ecosystem isn't generating meaningful revenue.\n\nThe platform team wants to invest $50M in developer tools, APIs, and SDKs to make Zoom the "AWS of communications" — an embedded communications platform that developers build on top of.\n\nThe GTM question: can Zoom credibly compete with Twilio (the current leader in communications APIs) while also maintaining its end-user product business?`,
+      question:`What's the right GTM strategy for Zoom's developer platform?`,
+      options:[
+        {text:`Don't compete with Twilio directly. Instead, position the developer platform as "embedded Zoom experiences." Developers don't want raw video APIs (Twilio's strength) — they want "add a Zoom meeting to my app with 3 lines of code." Zoom's brand, reliability, and user familiarity are the differentiator. GTM through existing Zoom customers: "Your users already know Zoom — now embed it in your product."`, score:3, feedback:`This is the strategically correct positioning. Competing with Twilio on raw APIs is a fight against a company with 10 years of developer-focused GTM expertise. But "embedded Zoom" is a different value proposition that Twilio can't match: users trust and recognise the Zoom experience. A telehealth app saying "video calls powered by Zoom" generates more patient trust than "video calls powered by Twilio" (which patients have never heard of). The GTM through existing customers is smart: Zoom's 200K+ business customers include companies building their own products. The pitch is "you use Zoom internally — now give your customers the same experience." This turns enterprise relationships into platform revenue.`},
+        {text:`Go all-in on competing with Twilio. Invest $50M in building the best communications APIs: video, voice, messaging, and email. Hire developer advocates, run a developer conference, and offer free credits to startups. The CPaaS market is $12B — big enough to justify a major investment.`, score:1, feedback:`The CPaaS market is large but Twilio is deeply entrenched: 10M+ developers, thousands of production applications, and a decade of trust. Building competitive APIs costs $50M+ but developer adoption costs even more — developer loyalty is earned through years of documentation, community building, and reliability. Zoom spending $50M on APIs doesn't create a developer ecosystem; it creates a "Twilio alternative" that needs to prove itself from zero. Meanwhile, the $50M could be invested in the core product where Zoom has natural advantages. Developer platforms take 5-7 years to mature. Zoom's board and shareholders won't wait that long for ROI.`},
+        {text:`Sunset the marketplace and developer platform. The 3,500 apps with low adoption prove there isn't strong developer demand. Redirect the $50M to improving the core product. Zoom wins by being the best meeting and workplace tool, not by being a developer platform.`, score:1, feedback:`Low adoption doesn't prove low demand — it might prove bad GTM. If apps exist but users don't discover them, the problem is distribution, not demand. Sunsetting the developer platform also eliminates the platform lock-in that makes Zoom defensible: once a company uses Zoom + 5 integrated apps, they can't switch without disrupting 5 workflows. The developer platform is a moat builder, not a revenue centre. Its value is in creating switching costs and ecosystem dependency. Many platform businesses (Apple's App Store, Salesforce AppExchange) took years of low-adoption investment before reaching critical mass. Patience and better GTM, not abandonment, is the right response.`},
+        {text:`Focus the developer platform on ISVs (Independent Software Vendors) in specific verticals. Partner with healthcare, education, and financial services ISVs to embed Zoom in their applications. These verticals have compliance requirements (HIPAA, FERPA, SOC 2) that Zoom already meets — a natural advantage over Twilio.`, score:2, feedback:`Vertical ISV focus is a smart refinement of the developer platform GTM. Healthcare (telehealth), education (virtual classrooms), and financial services (video banking) are high-value use cases where "powered by Zoom" carries trust. The compliance angle is a genuine differentiator — ISVs in regulated industries need a communications provider that's already compliant, and Zoom has the certifications that Twilio doesn't always have. However, this is too narrow: limiting to ISVs in 3 verticals constrains the platform's growth. The "embedded Zoom" positioning can serve ISVs AND mainstream SaaS companies AND internal enterprise apps. Don't narrow prematurely.`}
+      ],
+      competency:[8,3,7]
+    }
+  ]
+};
+// ─── PHASE MANAGEMENT ─────────────────────────────────────
+function showPhase(id){
+  document.querySelectorAll('.phase').forEach(p=>p.classList.remove('active'));
+  document.getElementById('phase-'+id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ─── ON LOAD ──────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded',()=>{
+  const params = new URLSearchParams(location.search);
+
+  // ?reset=true — clears attempt count
+  if(params.get('reset')==='true'){
+    Object.values(LS).forEach(k=>localStorage.removeItem(k));
+    location.href=location.pathname;
+    return;
+  }
+
+  // ?preview=true — founder mode: no email gate, no attempt limit
+  if(params.get('preview')==='true'){
+    state.name  = 'Preview Mode';
+    state.email = 'preview@cxosimulabs.com';
+    state.currentAttempt = 1;
+    // Show a small founder banner
+    const banner = document.createElement('div');
+    banner.style.cssText='position:fixed;bottom:16px;right:16px;background:#1a1a2e;color:#fff;padding:8px 16px;border-radius:8px;font-size:.78em;font-weight:600;z-index:9999;border:1px solid rgba(226,55,68,.4);';
+    banner.innerHTML='🔧 Founder Preview — <a href="?" style="color:#e23744;text-decoration:none;">Exit</a>';
+    document.body.appendChild(banner);
+    document.getElementById('attempt-badge-display').textContent = '🔧 Preview Mode';
+    showPhase('intro');
+    return;
+  }
+
+  const attempts = parseInt(localStorage.getItem(LS.attempts)||'0');
+  if(attempts>=2){
+    showPhase('blocked');
+  } else {
+    state.currentAttempt = attempts+1;
+    state.name = localStorage.getItem(LS.name)||'';
+    state.email = localStorage.getItem(LS.email)||'';
+    if(state.name && state.email){
+      document.getElementById('attempt-badge-display').textContent = `🎯 Attempt ${state.currentAttempt} of 2`;
+      showPhase('intro');
+    } else {
+      showPhase('email');
+    }
+  }
+});
+
+// ─── LEARN CARDS ──────────────────────────────────────────
+let currentLearnCard = 0;
+function nextLearnCard(){
+  const cards = document.querySelectorAll('.learn-card');
+  if(currentLearnCard < cards.length - 1){
+    cards[currentLearnCard].classList.remove('active');
+    currentLearnCard++;
+    cards[currentLearnCard].classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+}
+
+// ─── EMAIL / OTP ──────────────────────────────────────────
+function sendOTP(){
+  const name  = document.getElementById('input-name').value.trim();
+  const email = document.getElementById('input-email').value.trim();
+  const errEl = document.getElementById('email-error');
+  if(!name || !email || !email.includes('@') || !email.includes('.')){
+    errEl.style.display='block';
+    return;
+  }
+  errEl.style.display='none';
+  state.name  = name;
+  state.email = email;
+  const btn = document.getElementById('send-otp-btn');
+  btn.textContent='Sending…';
+  btn.disabled=true;
+
+  const code = Math.floor(100000+Math.random()*900000).toString();
+  state.otp = code;
+  state.otpExpiry = Date.now() + 10*60*1000;
+  state.otpAttempts = 0;
+
+  // NOTE: Update your EmailJS template to use these variables:
+  // Subject: "Your CXO Simulabs verification code"
+  // Body: "Hi {{to_name}}, your verification code for {{sim_name}} is: {{otp}}
+  //        This code expires in 10 minutes. Do not share it.
+  //        — CXO Simulabs Team | cxosimulabs.com"
+  emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
+    to_name: name,
+    to_email: email,
+    otp: code,
+    sim_name: 'CPO Simulation 15: Zoom',
+    message: `Hi ${name},\n\nYour CXO Simulabs verification code for CPO Simulation 15 (Zoom) is:\n\n${code}\n\nThis code expires in 10 minutes. Do not share it with anyone.\n\n— CXO Simulabs Team\ncxosimulabs.com`
+  }).then(()=>{
+    gtag('event','otp_requested',{sim:'CPO-SIM-15-Zoom'});
+    localStorage.setItem(LS.name, name);
+    localStorage.setItem(LS.email, email);
+    document.getElementById('otp-email-display').textContent = email;
+    showPhase('otp');
+    startOTPTimer();
+  }).catch(()=>{
+    gtag('event','otp_failed',{sim:'CPO-SIM-15-Zoom'});
+    btn.textContent='Send Verification Code →';
+    btn.disabled=false;
+    errEl.textContent='Failed to send code. Please try again.';
+    errEl.style.display='block';
+  });
+}
+
+function startOTPTimer(){
+  clearInterval(state.timerInterval);
+  state.timerInterval = setInterval(()=>{
+    const remaining = Math.max(0, state.otpExpiry - Date.now());
+    const m = Math.floor(remaining/60000);
+    const s = Math.floor((remaining%60000)/1000);
+    const el = document.getElementById('otp-timer');
+    if(el) el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if(remaining===0){ clearInterval(state.timerInterval); }
+  },1000);
+}
+
+function verifyOTP(){
+  const input = document.getElementById('input-otp').value.trim();
+  const errEl = document.getElementById('otp-error');
+  const okEl  = document.getElementById('otp-success');
+  errEl.style.display='none';
+  if(Date.now() > state.otpExpiry){
+    errEl.textContent='Code expired. Please request a new one.';
+    errEl.style.display='block';
+    return;
+  }
+  if(input !== state.otp){
+    state.otpAttempts++;
+    errEl.style.display='block';
+    return;
+  }
+  clearInterval(state.timerInterval);
+  okEl.style.display='block';
+  gtag('event','email_verified',{sim:'CPO-SIM-15-Zoom'});
+  setTimeout(()=>{
+    document.getElementById('attempt-badge-display').textContent = `🎯 Attempt ${state.currentAttempt} of 2`;
+    showPhase('intro');
+  },800);
+}
+
+function resendOTP(){
+  showPhase('email');
+  document.getElementById('input-name').value = state.name;
+  document.getElementById('input-email').value = state.email;
+}
+
+// ─── SIMULATION ───────────────────────────────────────────
+function startSim(){
+  const questions = Q[state.currentAttempt];
+  state.currentQ = 0;
+  state.answers  = [];
+  state.totalScore = 0;
+  state.maxScore   = questions.reduce((sum,q)=>sum+Math.max(...q.options.map(o=>o.points)),0);
+  gtag('event','sim_started',{sim:'CPO-SIM-15-Zoom',attempt:state.currentAttempt});
+  showPhase('questions');
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const questions = Q[state.currentAttempt];
+  const q = questions[state.currentQ];
+  const total = questions.length;
+  const qNum  = state.currentQ+1;
+
+  document.getElementById('q-progress-label').textContent = `Question ${qNum} of ${total}`;
+  document.getElementById('q-score-label').textContent = `Score: ${state.totalScore}`;
+  document.getElementById('progress-fill').style.width = `${((qNum-1)/total)*100}%`;
+
+  // Render scenario with bold headings
+  const scenarioEl = document.getElementById('q-scenario');
+  scenarioEl.innerHTML = q.scenario.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+
+  document.getElementById('q-question').textContent = q.question;
+
+  const optionsEl = document.getElementById('q-options');
+  optionsEl.innerHTML = '';
+  q.options.forEach((opt,i)=>{
+    const div = document.createElement('div');
+    div.className='option';
+    div.textContent=opt.text;
+    div.onclick=()=>selectOption(i);
+    optionsEl.appendChild(div);
+  });
+
+  document.getElementById('q-feedback').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+
+function selectOption(idx){
+  const questions = Q[state.currentAttempt];
+  const q = questions[state.currentQ];
+  const chosen = q.options[idx];
+  const maxPts = Math.max(...q.options.map(o=>o.points));
+
+  // Lock all options — no color change, just prevent re-clicking
+  document.querySelectorAll('.option').forEach(el=>el.classList.add('locked'));
+
+  state.answers.push({q:state.currentQ, chosen:idx, points:chosen.points, maxPts, feedback:chosen.feedback, questionText:q.question});
+  state.totalScore += chosen.points;
+  document.getElementById('q-score-label').textContent = `Score: ${state.totalScore}`;
+
+  // Feedback is revealed at the end — just show Next button
+  document.getElementById('q-feedback').style.display='none';
+  document.getElementById('next-btn').style.display='inline-block';
+  document.getElementById('next-btn').textContent =
+    state.currentQ < questions.length-1 ? 'Next Question →' : 'See My Results →';
+}
+
+function nextQuestion(){
+  const questions = Q[state.currentAttempt];
+  if(state.currentQ < questions.length-1){
+    state.currentQ++;
+    renderQuestion();
+    document.getElementById('phase-questions').querySelector('.q-wrap').scrollTop=0;
+    window.scrollTo(0,0);
+  } else {
+    showResults();
+  }
+}
+
+// ─── RESULTS ──────────────────────────────────────────────
+function showResults(){
+  const pct = Math.round((state.totalScore/state.maxScore)*100);
+  const isPreview = new URLSearchParams(location.search).get('preview')==='true' || !!document.getElementById('founder-badge');
+  if(!isPreview){
+    const attemptsDone = parseInt(localStorage.getItem(LS.attempts)||'0') + 1;
+    localStorage.setItem(LS.attempts, attemptsDone.toString());
+    const scores = JSON.parse(localStorage.getItem(LS.scores)||'[]');
+    scores.push({attempt:state.currentAttempt, score:state.totalScore, pct, date:new Date().toISOString()});
+    localStorage.setItem(LS.scores, JSON.stringify(scores));
+  }
+
+  const tier = pct>=90?'Strategic Mastery':pct>=75?'Applied Proficiency':pct>=60?'Core Competency':'Foundational Understanding';
+  gtag('event','sim_completed',{sim:'CPO-SIM-15-Zoom',attempt:state.currentAttempt,score_pct:pct,tier:tier});
+  const tierClass = pct>=90?'tier-mastery':pct>=75?'tier-proficiency':pct>=60?'tier-competency':'tier-foundational';
+  const tierFeedback = {
+    'Strategic Mastery':'Outstanding. You demonstrated the kind of nuanced, first-principles thinking that defines exceptional product leaders.',
+    'Applied Proficiency':'Strong performance. You understand the core frameworks and apply them well. Focus on the questions you missed to sharpen your edge.',
+    'Core Competency':'Good foundations. You got the basics right but there are gaps in some advanced areas. Review the feedback on your lowest-scoring answers.',
+    'Foundational Understanding':'A learning opportunity. The feedback on each question contains the mental models you need. Try Attempt 2 with fresh perspective.'
+  }[tier];
+
+  document.getElementById('results-heading').textContent = `Your Results — Attempt ${state.currentAttempt}`;
+  document.getElementById('result-pct').textContent = pct+'%';
+  document.getElementById('result-score-label').textContent = `${state.totalScore} / ${state.maxScore} pts`;
+
+  const badge = document.getElementById('tier-badge');
+  badge.textContent = tier;
+  badge.className = 'tier-badge '+tierClass;
+  document.getElementById('tier-feedback').textContent = tierFeedback;
+
+  drawScoreRing(pct);
+
+  // Breakdown with full feedback
+  const bd = document.getElementById('q-breakdown');
+  const questions = Q[state.currentAttempt];
+  bd.innerHTML = state.answers.map((a,i)=>{
+    const pctQ = Math.round((a.points/a.maxPts)*100);
+    const dotClass = pctQ>=80?'dot-high':pctQ>=50?'dot-mid':'dot-low';
+    const borderColor = pctQ>=80?'#059669':pctQ>=50?'#d97706':'#dc2626';
+    const chosen = questions[i].options[a.chosen];
+    return `<div style="border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="q-dot ${dotClass}"></div>
+        <span style="font-weight:600;font-size:.88em;flex:1;">Q${i+1}: ${questions[i].question}</span>
+        <span style="font-weight:700;font-size:.88em;color:${borderColor};">${a.points}/${a.maxPts}</span>
+      </div>
+      <div style="font-size:.82em;color:var(--muted);margin-bottom:8px;">Your answer: <em>${chosen.text}</em></div>
+      <div style="font-size:.85em;color:#374151;line-height:1.7;background:var(--light);border-left:3px solid ${borderColor};border-radius:0 6px 6px 0;padding:10px 14px;">${a.feedback}</div>
+    </div>`;
+  }).join('');
+
+  // ── Cumulative competency analysis ──
+  const compScores = state.answers.map((a,i)=>({
+    name: COMP_MAP[i]?COMP_MAP[i].name:`Competency ${i+1}`,
+    pct:  Math.round((a.points/a.maxPts)*100)
+  }));
+
+  document.getElementById('competency-bars').innerHTML = compScores.map(c=>{
+    const color = c.pct>=80?'#059669':c.pct>=50?'#d97706':'#dc2626';
+    return `<div class="comp-bar-row">
+      <div class="comp-label">${c.name}</div>
+      <div class="comp-track"><div class="comp-fill" style="width:${c.pct}%;background:${color};"></div></div>
+      <div class="comp-pct">${c.pct}%</div>
+    </div>`;
+  }).join('');
+
+  const sorted = [...compScores].sort((a,b)=>b.pct-a.pct);
+  const strengths = sorted.slice(0,2);
+  const gaps = sorted.slice(-2);
+
+  document.getElementById('strength-tags').innerHTML = strengths.map(s=>`<span class="strength-tag">${s.name}</span>`).join('');
+  document.getElementById('gap-tags').innerHTML = gaps.map(g=>`<span class="gap-tag">${g.name}</span>`).join('');
+
+  const insightText = pct>=90
+    ? `Outstanding across the board. Your ${strengths[0].name} and ${strengths[1].name} scores reflect the kind of first-principles thinking that defines exceptional product leaders. You consistently chose depth over speed, long-term over short-term, and principle over convenience.`
+    : pct>=75
+    ? `Strong CPO instincts. You excelled in ${strengths[0].name} and ${strengths[1].name}, showing real commercial and product maturity. Your development areas — ${gaps[0].name} and ${gaps[1].name} — are exactly where the highest-impact CPOs differentiate themselves as they scale.`
+    : pct>=60
+    ? `Solid foundations with clear growth areas. You showed genuine competency in ${strengths[0].name} and ${strengths[1].name}, but the gaps in ${gaps[0].name} and ${gaps[1].name} reveal where your thinking can deepen. Review the expert feedback on your lowest-scoring answers — those mental models are what separates good from great at CPO level.`
+    : `This simulation is designed to challenge. Your instincts in ${strengths[0].name} showed promise. The gaps in ${gaps[0].name} and ${gaps[1].name} reveal where CPO-level thinking diverges most sharply from general product management. Use the feedback from this round to recalibrate — Attempt 2 gives you fresh scenarios to apply these lessons.`;
+
+  document.getElementById('insight-text').textContent = insightText;
+
+  // Show "next sim" banner and attempt 2 prompt
+  const isPreview2 = new URLSearchParams(location.search).get('preview')==='true' || !!document.getElementById('founder-badge');
+  if(isPreview2){
+    document.getElementById('attempt2-prompt').style.display='block';
+    document.getElementById('next-sim-banner').style.display='none';
+  } else if(state.currentAttempt===1){
+    document.getElementById('attempt2-prompt').style.display='block';
+    document.getElementById('next-sim-banner').style.display='none';
+  } else {
+    document.getElementById('attempt2-prompt').style.display='none';
+    document.getElementById('next-sim-banner').style.display='flex';
+  }
+
+  drawCertificate(pct, tier);
+  drawBadge(pct, tier);
+  showPhase('results');
+}
+
+function startAttempt2(){
+  state.currentAttempt = 2;
+  showPhase('intro');
+  document.getElementById('attempt-badge-display').textContent = '🎯 Attempt 2 of 2';
+}
+
+// ─── SCORE RING ───────────────────────────────────────────
+function drawScoreRing(pct){
+  const zooms = document.getElementById('scoreRingZooms');
+  const ctx = zooms.getContext('2d');
+  const cx=80, cy=80, r=65, lw=12;
+  ctx.clearRect(0,0,160,160);
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle='#e5e7eb'; ctx.lineWidth=lw; ctx.stroke();
+  const angle = (pct/100)*Math.PI*2 - Math.PI/2;
+  ctx.beginPath(); ctx.arc(cx,cy,r,-Math.PI/2,angle);
+  ctx.strokeStyle = pct>=90?'#16a34a':pct>=75?'#2563eb':pct>=60?'#d97706':'#dc2626';
+  ctx.lineWidth=lw; ctx.lineCap='round'; ctx.stroke();
+}
+
+// ─── SHARED HELPERS ───────────────────────────────────────
+function drawLogoText(ctx, x, y, size='bold 15px'){
+  ctx.font=`${size} Inter, Arial, sans-serif`;
+  ctx.textAlign='left';
+  const cxoW=ctx.measureText('CXO').width;
+  ctx.fillStyle='#1a1a2e'; ctx.fillText('CXO',x,y);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',x+cxoW,y);
+}
+function centeredLogo(ctx, W, y, size='bold 15px'){
+  ctx.font=`${size} Inter, Arial, sans-serif`;
+  const total=ctx.measureText('CXO Simulabs').width;
+  const cxoW=ctx.measureText('CXO').width;
+  const sx=W/2-total/2;
+  ctx.fillStyle='#1a1a2e'; ctx.fillText('CXO',sx,y);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',sx+cxoW,y);
+}
+
+// ─── CERTIFICATE ──────────────────────────────────────────
+function drawCertificate(pct, tier){
+  const zooms = document.getElementById('certZooms');
+  const ctx = zooms.getContext('2d');
+  const W=1200, H=850;
+  zooms.width=W; zooms.height=H;
+  ctx.clearRect(0,0,W,H);
+  const CX=W/2; // center x for alignment
+  const gold='#c9a84c';
+
+  // ── Dark gradient background ──
+  const bg=ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,'#0c1221'); bg.addColorStop(0.5,'#131b2e'); bg.addColorStop(1,'#1a1a2e');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+  // ── Subtle dot grid ──
+  ctx.fillStyle='rgba(255,255,255,0.018)';
+  for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40){ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fill();}
+
+  // ── Gold accent bar at top ──
+  const topGrad=ctx.createLinearGradient(0,0,W,0);
+  topGrad.addColorStop(0,'#c9a84c'); topGrad.addColorStop(0.5,'#e8d48b'); topGrad.addColorStop(1,'#c9a84c');
+  ctx.fillStyle=topGrad; ctx.fillRect(0,0,W,5);
+
+  // ── Border frame ──
+  ctx.strokeStyle='rgba(201,168,76,0.25)'; ctx.lineWidth=1;
+  ctx.strokeRect(24,24,W-48,H-48);
+
+  // ── Corner ornaments ──
+  [[26,26,1,1],[W-26,26,-1,1],[26,H-26,1,-1],[W-26,H-26,-1,-1]].forEach(([x,y,sx,sy])=>{
+    ctx.strokeStyle='rgba(201,168,76,0.4)'; ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+sx*32,y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+sy*32);ctx.stroke();
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 1: HEADER — Logo + Track (y: 60–120)
+  // ═══════════════════════════════════════════════════════════
+  ctx.textAlign='left';
+  ctx.font='bold 26px Inter, Arial, sans-serif';
+  const cxoW=ctx.measureText('CXO').width;
+  const slW=ctx.measureText(' Simulabs').width;
+  const logoX=CX-(cxoW+slW)/2;
+  ctx.fillStyle='#ffffff'; ctx.fillText('CXO',logoX,72);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',logoX+cxoW,72);
+
+  ctx.textAlign='center';
+  ctx.font='600 11px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='3px';
+  ctx.fillText('CPO TRACK  ·  SIMULATION 15',CX,98);
+  ctx.letterSpacing='0';
+
+  // Gold divider with diamond
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=0.8;
+  ctx.beginPath();ctx.moveTo(CX-110,116);ctx.lineTo(CX+110,116);ctx.stroke();
+  ctx.fillStyle=gold;
+  ctx.beginPath();ctx.moveTo(CX,112);ctx.lineTo(CX+4,116);ctx.lineTo(CX,120);ctx.lineTo(CX-4,116);ctx.closePath();ctx.fill();
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 2: TITLE (y: 140–160)
+  // ═══════════════════════════════════════════════════════════
+  ctx.letterSpacing='6px';
+  ctx.font='600 13px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold;
+  ctx.fillText('SIMULATION COMPLETION RECORD',CX,152);
+  ctx.letterSpacing='0';
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 3: NAME (y: 185–290)
+  // ═══════════════════════════════════════════════════════════
+  ctx.font='italic 15px Georgia, serif';
+  ctx.fillStyle='rgba(255,255,255,0.4)';
+  ctx.fillText('This certifies that',CX,200);
+
+  const name=state.name||state.email;
+  ctx.font='bold 52px Georgia, "Times New Roman", serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(name,CX,260);
+
+  // Gold fading underline
+  const nw=Math.min(ctx.measureText(name).width+60,W-200);
+  const ulGrad=ctx.createLinearGradient(CX-nw/2,0,CX+nw/2,0);
+  ulGrad.addColorStop(0,'rgba(201,168,76,0)'); ulGrad.addColorStop(0.3,'rgba(201,168,76,0.45)');
+  ulGrad.addColorStop(0.5,'rgba(201,168,76,0.65)'); ulGrad.addColorStop(0.7,'rgba(201,168,76,0.45)');
+  ulGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=ulGrad; ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.moveTo(CX-nw/2,275);ctx.lineTo(CX+nw/2,275);ctx.stroke();
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 4: ACHIEVEMENT — Competency HERO, company secondary (y: 300–400)
+  // ═══════════════════════════════════════════════════════════
+  ctx.font='italic 14px Georgia, serif';
+  ctx.fillStyle='rgba(255,255,255,0.38)';
+  ctx.fillText('has completed a learning simulation exploring',CX,316);
+
+  // COMPETENCY = THE HERO
+  ctx.font='bold 28px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText('Go-to-Market Strategy',CX,358);
+
+  // Company = secondary context
+  ctx.font='15px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.35)';
+  ctx.fillText('through the Zoom case simulation',CX,390);
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 5: METRICS — Score / Tier / Date (y: 430–560)
+  // ═══════════════════════════════════════════════════════════
+  // Horizontal divider above metrics
+  const divGrad1=ctx.createLinearGradient(100,0,W-100,0);
+  divGrad1.addColorStop(0,'rgba(201,168,76,0)'); divGrad1.addColorStop(0.2,'rgba(201,168,76,0.2)');
+  divGrad1.addColorStop(0.5,'rgba(201,168,76,0.3)'); divGrad1.addColorStop(0.8,'rgba(201,168,76,0.2)');
+  divGrad1.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=divGrad1; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(100,420);ctx.lineTo(W-100,420);ctx.stroke();
+
+  const metricsY=488; // vertical center for all 3 columns
+  const colL=240, colC=CX, colR=W-240; // 3 evenly spaced columns
+  const ringColor=pct>=90?'#4ade80':pct>=75?'#60a5fa':pct>=60?'#fbbf24':'#f87171';
+
+  // — SCORE (left) — with ring
+  const ringR=58, ringLw=8;
+  ctx.beginPath();ctx.arc(colL,metricsY,ringR,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,0.06)'; ctx.lineWidth=ringLw; ctx.stroke();
+  const angle=(pct/100)*Math.PI*2-Math.PI/2;
+  ctx.beginPath();ctx.arc(colL,metricsY,ringR,-Math.PI/2,angle);
+  ctx.strokeStyle=ringColor; ctx.lineWidth=ringLw; ctx.lineCap='round'; ctx.stroke();
+  ctx.lineCap='butt';
+  ctx.font='bold 44px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(pct+'%',colL,metricsY+14);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('SCORE',colL,metricsY+38);
+  ctx.letterSpacing='0';
+
+  // — TIER (center) —
+  ctx.font='bold 26px Inter, Arial, sans-serif';
+  ctx.fillStyle=ringColor;
+  ctx.fillText(tier,colC,metricsY+8);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('PERFORMANCE TIER',colC,metricsY+32);
+  ctx.letterSpacing='0';
+
+  // — DATE (right) —
+  const d=new Date();
+  const dateStr=d.toLocaleString('default',{month:'long'})+' '+d.getDate()+', '+d.getFullYear();
+  ctx.font='bold 20px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(dateStr,colR,metricsY+8);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('DATE ISSUED',colR,metricsY+32);
+  ctx.letterSpacing='0';
+
+  // Vertical separators between columns
+  ctx.strokeStyle='rgba(201,168,76,0.15)'; ctx.lineWidth=0.8;
+  const sepTop=metricsY-52, sepBot=metricsY+48;
+  ctx.beginPath();ctx.moveTo((colL+colC)/2,sepTop);ctx.lineTo((colL+colC)/2,sepBot);ctx.stroke();
+  ctx.beginPath();ctx.moveTo((colC+colR)/2,sepTop);ctx.lineTo((colC+colR)/2,sepBot);ctx.stroke();
+
+  // Horizontal divider below metrics
+  ctx.strokeStyle=divGrad1; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(100,556);ctx.lineTo(W-100,556);ctx.stroke();
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 6: COMPETENCIES ASSESSED (y: 580–680)
+  // ═══════════════════════════════════════════════════════════
+  ctx.letterSpacing='2.5px';
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold;
+  ctx.fillText('COMPETENCIES ASSESSED',CX,586);
+  ctx.letterSpacing='0';
+
+  const comps=COMP_MAP.map(c=>c.name);
+  ctx.font='11.5px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.45)';
+  // 2 rows of 5, evenly spaced
+  const compStartX=160, compSpacing=220;
+  comps.slice(0,5).forEach((c,i)=>{ctx.fillText(c,compStartX+i*compSpacing,614);});
+  comps.slice(5,10).forEach((c,i)=>{ctx.fillText(c,compStartX+i*compSpacing,640);});
+
+  // ═══════════════════════════════════════════════════════════
+  // SECTION 7: FOOTER (y: 780–830)
+  // ═══════════════════════════════════════════════════════════
+  // Seal (bottom-right)
+  const sealX=W-90, sealY=H-85, sealR=32;
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR,0,Math.PI*2);ctx.stroke();
+  ctx.strokeStyle='rgba(201,168,76,0.12)'; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR-6,0,Math.PI*2);ctx.stroke();
+  ctx.fillStyle='rgba(201,168,76,0.04)';
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR,0,Math.PI*2);ctx.fill();
+  ctx.font='bold 7px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='1.5px';
+  ctx.fillText('COMPLETED',sealX,sealY-6);
+  ctx.letterSpacing='0';
+  ctx.font='bold 18px Arial';
+  ctx.fillStyle=gold;
+  ctx.fillText('✓',sealX,sealY+10);
+
+  // Footer divider
+  const footGrad=ctx.createLinearGradient(50,0,W-50,0);
+  footGrad.addColorStop(0,'rgba(201,168,76,0)'); footGrad.addColorStop(0.3,'rgba(201,168,76,0.2)');
+  footGrad.addColorStop(0.5,'rgba(201,168,76,0.3)'); footGrad.addColorStop(0.7,'rgba(201,168,76,0.2)');
+  footGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=footGrad; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(50,H-55);ctx.lineTo(W-50,H-55);ctx.stroke();
+
+  // Footer text
+  ctx.textAlign='left';
+  ctx.font='12px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.fillText('© 2026 CXO Simulabs  ·  Not a professional certification  ·  Not affiliated with Zoom Video Communications, Inc',55,H-32);
+  ctx.textAlign='right';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.font='bold 11px Inter, Arial, sans-serif';
+  ctx.fillText('www.cxosimulabs.com',W-55,H-32);
+}
+
+// ─── INSTAGRAM BADGE ──────────────────────────────────────
+function drawBadge(pct, tier){
+  const zooms=document.getElementById('badgeZooms');
+  const ctx=zooms.getContext('2d');
+  const S=1080;
+  ctx.clearRect(0,0,S,S);
+  const C=S/2; // center
+  const gold='#c9a84c';
+
+  // ── Dark gradient background ──
+  const bg=ctx.createLinearGradient(0,0,S,S);
+  bg.addColorStop(0,'#0c1221'); bg.addColorStop(0.5,'#131b2e'); bg.addColorStop(1,'#1a1a2e');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,S,S);
+
+  // ── Subtle dot grid ──
+  ctx.fillStyle='rgba(255,255,255,0.018)';
+  for(let x=0;x<S;x+=44)for(let y=0;y<S;y+=44){ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fill();}
+
+  // ── Gold bar top ──
+  const topGrad=ctx.createLinearGradient(0,0,S,0);
+  topGrad.addColorStop(0,'#c9a84c'); topGrad.addColorStop(0.5,'#e8d48b'); topGrad.addColorStop(1,'#c9a84c');
+  ctx.fillStyle=topGrad; ctx.fillRect(0,0,S,6);
+
+  // ── Border + corners ──
+  ctx.strokeStyle='rgba(201,168,76,0.25)'; ctx.lineWidth=1;
+  ctx.strokeRect(24,24,S-48,S-48);
+  [[26,26,1,1],[S-26,26,-1,1],[26,S-26,1,-1],[S-26,S-26,-1,-1]].forEach(([x,y,sx,sy])=>{
+    ctx.strokeStyle='rgba(201,168,76,0.4)'; ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+sx*28,y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+sy*28);ctx.stroke();
+  });
+
+  // ── Logo ──
+  ctx.textAlign='left';
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  const cW=ctx.measureText('CXO').width;
+  const sW=ctx.measureText(' Simulabs').width;
+  const lStart=C-(cW+sW)/2;
+  ctx.fillStyle='#ffffff'; ctx.fillText('CXO',lStart,82);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',lStart+cW,82);
+
+  // ── Track label ──
+  ctx.textAlign='center';
+  ctx.font='600 13px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='3px';
+  ctx.fillText('CPO TRACK  ·  SIMULATION 15',C,114);
+  ctx.letterSpacing='0';
+
+  // ── Gold divider ──
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=0.8;
+  ctx.beginPath();ctx.moveTo(C-100,134);ctx.lineTo(C+100,134);ctx.stroke();
+  ctx.fillStyle=gold;
+  ctx.beginPath();ctx.moveTo(C,130);ctx.lineTo(C+4,134);ctx.lineTo(C,138);ctx.lineTo(C-4,134);ctx.closePath();ctx.fill();
+
+  // ── Competency HERO ──
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText('Product',C,186);
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.fillText('Go-to-Market Strategy',C,228);
+
+  // ── Company context ──
+  ctx.font='16px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)';
+  ctx.fillText('Zoom case simulation',C,262);
+
+  // ── Name ──
+  const name=state.name||state.email;
+  ctx.font='bold 40px Georgia, "Times New Roman", serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(name,C,320);
+  // Gold underline
+  const nw2=Math.min(ctx.measureText(name).width+40,S-120);
+  const ulGrad=ctx.createLinearGradient(C-nw2/2,0,C+nw2/2,0);
+  ulGrad.addColorStop(0,'rgba(201,168,76,0)'); ulGrad.addColorStop(0.3,'rgba(201,168,76,0.4)');
+  ulGrad.addColorStop(0.5,'rgba(201,168,76,0.55)'); ulGrad.addColorStop(0.7,'rgba(201,168,76,0.4)');
+  ulGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=ulGrad; ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(C-nw2/2,334);ctx.lineTo(C+nw2/2,334);ctx.stroke();
+
+  // ── Score ring ──
+  const ringCY=560, r=170, lw=22;
+  ctx.beginPath();ctx.arc(C,ringCY,r,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,0.06)'; ctx.lineWidth=lw; ctx.stroke();
+  const angle=(pct/100)*Math.PI*2-Math.PI/2;
+  const ringColor=pct>=90?'#4ade80':pct>=75?'#60a5fa':pct>=60?'#fbbf24':'#f87171';
+  ctx.beginPath();ctx.arc(C,ringCY,r,-Math.PI/2,angle);
+  ctx.strokeStyle=ringColor; ctx.lineWidth=lw; ctx.lineCap='round'; ctx.stroke();
+  ctx.lineCap='butt';
+
+  // Score text
+  ctx.font='bold 120px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(pct+'%',C,ringCY+40);
+
+  // Tier
+  ctx.font='bold 30px Inter, Arial, sans-serif';
+  ctx.fillStyle=ringColor;
+  ctx.fillText(tier,C,ringCY+88);
+
+  // ── Footer ──
+  const fDivGrad=ctx.createLinearGradient(40,0,S-40,0);
+  fDivGrad.addColorStop(0,'rgba(201,168,76,0)'); fDivGrad.addColorStop(0.3,'rgba(201,168,76,0.2)');
+  fDivGrad.addColorStop(0.5,'rgba(201,168,76,0.3)'); fDivGrad.addColorStop(0.7,'rgba(201,168,76,0.2)');
+  fDivGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=fDivGrad; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(40,S-100);ctx.lineTo(S-40,S-100);ctx.stroke();
+
+  // Seal bottom-right
+  const sealX=S-90, sealY=S-58;
+  ctx.strokeStyle='rgba(201,168,76,0.28)'; ctx.lineWidth=1;
+  ctx.beginPath();ctx.arc(sealX,sealY,22,0,Math.PI*2);ctx.stroke();
+  ctx.font='bold 14px Arial'; ctx.fillStyle=gold;
+  ctx.fillText('✓',sealX,sealY+5);
+
+  ctx.font='bold 22px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.45)';
+  ctx.fillText('www.cxosimulabs.com',C,S-52);
+
+  ctx.font='14px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.2)';
+  ctx.fillText('Try the free simulation →',C,S-28);
+}
+
+function getPctTier(){
+  return {
+    pct: parseInt(document.getElementById('result-pct').textContent),
+    tier: document.getElementById('tier-badge').textContent
+  };
+}
+function downloadCert(){
+  const {pct,tier}=getPctTier();
+  gtag('event','cert_downloaded',{sim:'CPO-SIM-15-Zoom',score_pct:pct,tier:tier});
+  const zooms=document.getElementById('certZooms');
+  zooms.width=1200; zooms.height=850;
+  drawCertificate(pct,tier);
+  const link=document.createElement('a');
+  link.download=`CXO-Simulabs-Certificate-${(state.name||'').replace(/\s/g,'-')}.png`;
+  link.href=zooms.toDataURL('image/png'); link.click();
+}
+function downloadBadge(){
+  const {pct,tier}=getPctTier();
+  gtag('event','badge_downloaded',{sim:'CPO-SIM-15-Zoom',score_pct:pct,tier:tier});
+  const zooms=document.getElementById('badgeZooms');
+  drawBadge(pct,tier);
+  const link=document.createElement('a');
+  link.download=`CXO-Simulabs-Badge-${(state.name||'').replace(/\s/g,'-')}.png`;
+  link.href=zooms.toDataURL('image/png'); link.click();
+}
+function shareZoom(){
+  gtag('event','share_linkedin',{sim:'CPO-SIM-15-Zoom'});
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`I just scored ${pct}% (${tier}) on the Zoom Go-to-Market Strategy Simulation by CXO Simulabs — 10 real product decisions, expert feedback.\n\nTry it free: https://cxosimulabs.com\n\n#ProductManagement #CPO #CXOSimulabs #GoToMarket`);
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcxosimulabs.com&summary=${text}`,'_blank');
+}
+function shareTwitter(){
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`Just scored ${pct}% (${tier}) on the Zoom Go-to-Market Strategy Simulation by @CXOSimulabs — 10 real product decisions, expert feedback. Try it free 👇\nhttps://cxosimulabs.com\n#CPO #ProductManagement #GoToMarket`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}`,'_blank');
+}
+function shareWhatsApp(){
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`I scored ${pct}% (${tier}) on the Zoom Go-to-Market Strategy Simulation by CXO Simulabs — 10 real product decisions with expert feedback. Try it free: https://cxosimulabs.com`);
+  window.open(`https://wa.me/?text=${text}`,'_blank');
+}
+function copyLink(){
+  navigator.clipboard.writeText('https://cxosimulabs.com').then(()=>{
+    const btn=document.getElementById('copy-link-btn');
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>btn.textContent='Copy Link',2000);
+  });
+}
+</script>
+</body>
+</html>
